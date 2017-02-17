@@ -17,7 +17,7 @@ namespace class_hierarchy
             shapes.Add(shape);
         }
 
-        public void DrawShapes(Graphics g, Brush brush)
+        public void DrawAllShapes(Graphics g, Brush brush)
         {
             shapes.ForEach(item => item.Draw(g, brush));
         }
