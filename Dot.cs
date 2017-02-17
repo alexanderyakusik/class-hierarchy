@@ -13,12 +13,9 @@ namespace class_hierarchy
             this.y = y;
         }
 
-        public virtual void Draw(Graphics g, Color color)
+        public virtual void Draw(Graphics g, Brush brush)
         {
-            using (SolidBrush brush = new SolidBrush(color))
-            {
-                g.FillRectangle(brush, x, y, 1, 1);
-            }        
+            g.FillRectangle(brush, x, y, 1, 1);
         }
     }
 }
