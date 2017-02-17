@@ -2,7 +2,7 @@
 
 namespace class_hierarchy
 {
-    public partial class frmMain : Form
+    public partial class  frmMain : Form
     {
         public frmMain()
         {
