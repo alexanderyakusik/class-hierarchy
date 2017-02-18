@@ -2,7 +2,7 @@
 
 namespace class_hierarchy
 {
-    public class Dot
+    public class Dot : Shape
     {
         public int x { get; }
         public int y { get; }
@@ -13,7 +13,7 @@ namespace class_hierarchy
             this.y = y;
         }
 
-        public virtual void Draw(Graphics g, Brush brush)
+        public override void Draw(Graphics g, Brush brush)
         {
             g.FillRectangle(brush, x, y, 1, 1);
         }
