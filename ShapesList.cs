@@ -5,14 +5,14 @@ namespace class_hierarchy
 {
     class ShapesList
     {
-        private List<Dot> shapes;
+        private List<Shape> shapes;
 
         public ShapesList()
         {
-            shapes = new List<Dot>();
+            shapes = new List<Shape>();
         }
 
-        public void Add(Dot shape)
+        public void Add(Shape shape)
         {
             shapes.Add(shape);
         }
