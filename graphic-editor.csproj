@@ -95,7 +95,10 @@
     <None Include="icons\button_icon_line_32x32.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icons\button_icon_circle_32x32.png" />
+    <Content Include="icons\button_icon_ellipse_32x32.png" />
     <Content Include="icons\button_icon_rectangle_32x32.png" />
+    <Content Include="icons\button_icon_square_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

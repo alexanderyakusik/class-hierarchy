@@ -117,6 +117,7 @@
             // 
             // toolStripButtonEllipse
             // 
+            this.toolStripButtonEllipse.CheckOnClick = true;
             this.toolStripButtonEllipse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonEllipse.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEllipse.Image")));
             this.toolStripButtonEllipse.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -126,6 +127,7 @@
             // 
             // toolStripButtonCircle
             // 
+            this.toolStripButtonCircle.CheckOnClick = true;
             this.toolStripButtonCircle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonCircle.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCircle.Image")));
             this.toolStripButtonCircle.ImageTransparentColor = System.Drawing.Color.Magenta;
