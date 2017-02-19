@@ -10,7 +10,7 @@ namespace class_hierarchy
             InitializeComponent();
         }
 
-        private void frmMain_Load(object sender, System.EventArgs e)
+        private void frmMain_Paint(object sender, PaintEventArgs e)
         {
             Bitmap bmp = new Bitmap(pictureBox.Width, pictureBox.Height);
             using (Graphics g = Graphics.FromImage(bmp))
