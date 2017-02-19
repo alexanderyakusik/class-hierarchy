@@ -7,8 +7,8 @@
     <ProjectGuid>{74BBFAFF-CF76-48E9-8B29-A1F786CAD8B2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>class_hierarchy</RootNamespace>
-    <AssemblyName>class-hierarchy</AssemblyName>
+    <RootNamespace>graphic_editor</RootNamespace>
+    <AssemblyName>graphic-editor</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -73,6 +73,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
