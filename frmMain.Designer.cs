@@ -118,7 +118,6 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.pictureBox);
-            this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Графический редактор";

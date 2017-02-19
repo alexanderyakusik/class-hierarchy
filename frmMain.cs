@@ -18,6 +18,11 @@ namespace class_hierarchy
                 g.Clear(Color.White);
             }
             pictureBox.Image = bmp;
+            using (Graphics g = Graphics.FromImage(pictureBox.Image))
+            {
+                var brush = new SolidBrush(Color.Black);
+                ShapesList.DrawAllShapes(g, brush);
+            }
         }
 
         private void toolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

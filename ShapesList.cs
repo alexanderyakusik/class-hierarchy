@@ -3,21 +3,16 @@ using System.Drawing;
 
 namespace class_hierarchy
 {
-    class ShapesList
+    static class ShapesList
     {
-        private List<Shape> shapes;
+        private static List<Shape> shapes = new List<Shape>();
 
-        public ShapesList()
-        {
-            shapes = new List<Shape>();
-        }
-
-        public void Add(Shape shape)
+        public static void Add(Shape shape)
         {
             shapes.Add(shape);
         }
 
-        public void DrawAllShapes(Graphics g, Brush brush)
+        public static void DrawAllShapes(Graphics g, Brush brush)
         {
             shapes.ForEach(item => item.Draw(g, brush));
         }
