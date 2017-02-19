@@ -1,3 +1,3 @@
-###Repo contains simple program that draws geometric figures, which creation was programmed in code
+###Repo contains simple program that allows user to draw geometric figures
 
-This program was written in order to practice the OOP class hierarchy.
+This program was written in order to practice the OOP principles
