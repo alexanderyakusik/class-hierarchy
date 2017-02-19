@@ -19,5 +19,13 @@ namespace class_hierarchy
             }
             pictureBox.Image = bmp;
         }
+
+        private void toolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            foreach (ToolStripButton btn in ((ToolStrip)sender).Items)
+            {
+                if (btn != e.ClickedItem) btn.Checked = false;
+            }
+        }
     }
 }

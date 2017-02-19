@@ -28,37 +28,117 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonPencil = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonLine = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonRectangle = new System.Windows.Forms.ToolStripButton();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.toolStripButtonEllipse = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
+            // toolStrip
+            // 
+            this.toolStrip.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonPencil,
+            this.toolStripButtonLine,
+            this.toolStripButtonRectangle,
+            this.toolStripButtonEllipse});
+            this.toolStrip.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.Size = new System.Drawing.Size(37, 561);
+            this.toolStrip.TabIndex = 1;
+            this.toolStrip.Text = "toolStrip";
+            this.toolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip_ItemClicked);
+            // 
+            // toolStripButtonPencil
+            // 
+            this.toolStripButtonPencil.CheckOnClick = true;
+            this.toolStripButtonPencil.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonPencil.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonPencil.Image")));
+            this.toolStripButtonPencil.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonPencil.Name = "toolStripButtonPencil";
+            this.toolStripButtonPencil.Size = new System.Drawing.Size(34, 36);
+            this.toolStripButtonPencil.Text = "Инструмент «Карандаш»";
+            this.toolStripButtonPencil.ToolTipText = "Инструмент «Карандаш»";
+            // 
+            // toolStripButtonLine
+            // 
+            this.toolStripButtonLine.CheckOnClick = true;
+            this.toolStripButtonLine.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonLine.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonLine.Image")));
+            this.toolStripButtonLine.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonLine.Name = "toolStripButtonLine";
+            this.toolStripButtonLine.Size = new System.Drawing.Size(34, 36);
+            this.toolStripButtonLine.Text = "Инструмент «Линия»";
+            // 
+            // toolStripButtonRectangle
+            // 
+            this.toolStripButtonRectangle.CheckOnClick = true;
+            this.toolStripButtonRectangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonRectangle.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonRectangle.Image")));
+            this.toolStripButtonRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonRectangle.Name = "toolStripButtonRectangle";
+            this.toolStripButtonRectangle.Size = new System.Drawing.Size(34, 36);
+            this.toolStripButtonRectangle.Text = "Инструмент «Прямоугольник»";
+            this.toolStripButtonRectangle.ToolTipText = "Инструмент «Прямоугольник»";
+            // 
             // pictureBox
             // 
+            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox.MinimumSize = new System.Drawing.Size(1, 1);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(784, 561);
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
+            // 
+            // toolStripButtonEllipse
+            // 
+            this.toolStripButtonEllipse.CheckOnClick = true;
+            this.toolStripButtonEllipse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonEllipse.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEllipse.Image")));
+            this.toolStripButtonEllipse.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonEllipse.Name = "toolStripButtonEllipse";
+            this.toolStripButtonEllipse.Size = new System.Drawing.Size(34, 36);
+            this.toolStripButtonEllipse.Text = "Инструмент «Эллипс»";
+            this.toolStripButtonEllipse.ToolTipText = "Инструмент «Эллипс»";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.pictureBox);
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Лабораторная работа №1";
+            this.Text = "Графический редактор";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmMain_Paint);
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.ToolStrip toolStrip;
+        private System.Windows.Forms.ToolStripButton toolStripButtonPencil;
+        private System.Windows.Forms.ToolStripButton toolStripButtonLine;
+        private System.Windows.Forms.ToolStripButton toolStripButtonRectangle;
+        private System.Windows.Forms.ToolStripButton toolStripButtonEllipse;
     }
 }
 
