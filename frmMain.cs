@@ -29,7 +29,36 @@ namespace class_hierarchy
         {
             foreach (ToolStripButton btn in ((ToolStrip)sender).Items)
             {
-                if (btn != e.ClickedItem) btn.Checked = false;
+                if (btn != e.ClickedItem)
+                    btn.Checked = false;
+                else
+                    SetCurrentShape(btn);
+                
+            }
+        }
+
+        private void SetCurrentShape(ToolStripButton btn)
+        {
+            switch (btn.Name)
+            {
+                case "toolStripButtonPencil":
+                    ShapesList.currentShape = ShapesList.availableShapes[0];
+                    break;
+                case "toolStripButtonLine":
+                    ShapesList.currentShape = ShapesList.availableShapes[1];
+                    break;
+                case "toolStripButtonRectangle":
+                    ShapesList.currentShape = ShapesList.availableShapes[2];
+                    break;
+                case "toolStripButtonSquare":
+                    ShapesList.currentShape = ShapesList.availableShapes[3];
+                    break;
+                case "toolStripButtonEllipse":
+                    ShapesList.currentShape = ShapesList.availableShapes[4];
+                    break;
+                case "toolStripButtonCircle":
+                    ShapesList.currentShape = ShapesList.availableShapes[5];
+                    break;
             }
         }
     }
