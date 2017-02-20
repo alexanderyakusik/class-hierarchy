@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 using System.Drawing;
 
-namespace class_hierarchy
+namespace graphic_editor
 {
     public partial class frmMain : Form
     {
@@ -14,17 +14,7 @@ namespace class_hierarchy
 
         private void frmMain_Paint(object sender, PaintEventArgs e)
         {
-            Bitmap bmp = new Bitmap(pictureBox.Width, pictureBox.Height);
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                g.Clear(Color.White);
-            }
-            pictureBox.Image = bmp;
-            using (Graphics g = Graphics.FromImage(pictureBox.Image))
-            {
-                var brush = new SolidBrush(Color.Black);
-                ShapesList.DrawAllShapes(g, brush);
-            }
+            RepaintPictureBox();
         }
 
         private void toolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -71,6 +61,34 @@ namespace class_hierarchy
             ShapesList.currentShape.x = e.X;
             ShapesList.currentShape.y = e.Y;
             isMouseButtonPressed = true;
+        }
+
+        private void pictureBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!isMouseButtonPressed) return;
+            ShapesList.currentShape.end_x = e.X;
+            ShapesList.currentShape.end_y = e.Y;
+            RepaintPictureBox();
+        }
+
+        private void RepaintPictureBox()
+        {
+            Bitmap bmp = new Bitmap(pictureBox.Width, pictureBox.Height);
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                g.Clear(Color.White);
+            }
+            pictureBox.Image = bmp;
+            using (Graphics g = Graphics.FromImage(pictureBox.Image))
+            {
+                var brush = new SolidBrush(Color.Black);
+                ShapesList.DrawAllShapes(g, brush);
+            }
+        }
+
+        private void pictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMouseButtonPressed = false;
         }
     }
 }

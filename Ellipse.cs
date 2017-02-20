@@ -1,23 +1,17 @@
 ﻿using System.Drawing;
 
-namespace class_hierarchy
+namespace graphic_editor
 {
-    public class Ellipse : Dot
+    public class Ellipse : ComplexShape
     {
-        public int width { get; }
-        public int height { get; }
-
-        public Ellipse(int x, int y, int width, int height) : base(x, y)
-        {
-            this.width = width;
-            this.height = height;
-        }
+        public Ellipse(int x, int y, int width, int height) : base(x, y, width, height) { }
 
         public override void Draw(Graphics g, Brush brush)
         {
+            RecalculateCoords();
             using (var pen = new Pen(brush))
             {
-                g.DrawEllipse(pen, x, y, width, height);
+                g.DrawEllipse(pen, init_x, init_y, width, height);
             }
         }
     }

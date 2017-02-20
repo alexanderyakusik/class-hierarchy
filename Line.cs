@@ -1,12 +1,9 @@
 ﻿using System.Drawing;
 
-namespace class_hierarchy
+namespace graphic_editor
 {
     public class Line : Dot
     {
-        public int end_x { get; }
-        public int end_y { get; }
-
         public Line(int x, int y, int end_x, int end_y) : base(x, y)
         {
             this.end_x = end_x;

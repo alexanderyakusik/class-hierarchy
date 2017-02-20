@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace class_hierarchy
+namespace graphic_editor
 {
     public class Dot : Shape
     {

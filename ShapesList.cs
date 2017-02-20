@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 
-namespace class_hierarchy
+namespace graphic_editor
 {
     static class ShapesList
     {
