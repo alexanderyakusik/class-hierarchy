@@ -64,11 +64,21 @@ namespace graphic_editor
             ShapesList.currentShape.x = e.X;
             ShapesList.currentShape.y = e.Y;
             isMouseButtonPressed = true;
+            RepaintPictureBox();
         }
 
         private void pictureBox_MouseMove(object sender, MouseEventArgs e)
         {
             if (!isMouseButtonPressed) return;
+            if (ShapesList.currentShape.GetType() == ShapesList.availableShapes[0].GetType())
+            {
+                ShapesList.Add(ShapesList.currentShape.Clone());
+                ShapesList.currentShape = ShapesList.GetLastShape();
+                ShapesList.currentShape.x = e.X;
+                ShapesList.currentShape.y = e.Y;
+                RepaintPictureBox();
+                return;
+            }
             ShapesList.currentShape.end_x = e.X;
             ShapesList.currentShape.end_y = e.Y;
             RepaintPictureBox();
