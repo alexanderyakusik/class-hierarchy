@@ -24,8 +24,10 @@ namespace graphic_editor
                 if (btn != e.ClickedItem)
                     btn.Checked = false;
                 else
-                    SetCurrentShape(btn);
-                
+                    if (btn.Checked == true)
+                        SetCurrentShape(btn);
+                    else
+                        ShapesList.currentShape = null;
             }
         }
 
@@ -56,6 +58,7 @@ namespace graphic_editor
 
         private void pictureBox_MouseDown(object sender, MouseEventArgs e)
         {
+            if (ShapesList.currentShape == null) return;
             ShapesList.Add(ShapesList.currentShape.Clone());
             ShapesList.currentShape = ShapesList.GetLastShape();
             ShapesList.currentShape.x = e.X;
