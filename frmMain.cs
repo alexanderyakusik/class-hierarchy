@@ -24,7 +24,7 @@ namespace graphic_editor
                 if (btn != e.ClickedItem)
                     btn.Checked = false;
                 else
-                    if (btn.Checked == true)
+                    if (btn.Checked == false)
                         SetCurrentShape(btn);
                     else
                         ShapesList.currentShape = null;
