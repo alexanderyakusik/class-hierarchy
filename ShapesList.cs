@@ -22,6 +22,11 @@ namespace class_hierarchy
             shapes.Add(shape);
         }
 
+        public static Shape GetLastShape()
+        {
+            return shapes[shapes.Count - 1];
+        }
+
         public static void DrawAllShapes(Graphics g, Brush brush)
         {
             shapes.ForEach(item => item.Draw(g, brush));

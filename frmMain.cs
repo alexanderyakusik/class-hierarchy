@@ -5,6 +5,8 @@ namespace class_hierarchy
 {
     public partial class frmMain : Form
     {
+        public bool isMouseButtonPressed { get; set; }
+
         public frmMain()
         {
             InitializeComponent();
@@ -60,6 +62,15 @@ namespace class_hierarchy
                     ShapesList.currentShape = ShapesList.availableShapes[5];
                     break;
             }
+        }
+
+        private void pictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            ShapesList.Add(ShapesList.currentShape.Clone());
+            ShapesList.currentShape = ShapesList.GetLastShape();
+            ShapesList.currentShape.x = e.X;
+            ShapesList.currentShape.y = e.Y;
+            isMouseButtonPressed = true;
         }
     }
 }

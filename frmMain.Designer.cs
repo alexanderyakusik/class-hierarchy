@@ -34,9 +34,9 @@
             this.toolStripButtonLine = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonRectangle = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSquare = new System.Windows.Forms.ToolStripButton();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.toolStripButtonEllipse = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCircle = new System.Windows.Forms.ToolStripButton();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -103,18 +103,6 @@
             this.toolStripButtonSquare.Text = "Инструмент «Квадрат»";
             this.toolStripButtonSquare.ToolTipText = "Инструмент «Квадрат»";
             // 
-            // pictureBox
-            // 
-            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox.MinimumSize = new System.Drawing.Size(1, 1);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(784, 561);
-            this.pictureBox.TabIndex = 0;
-            this.pictureBox.TabStop = false;
-            // 
             // toolStripButtonEllipse
             // 
             this.toolStripButtonEllipse.CheckOnClick = true;
@@ -135,6 +123,19 @@
             this.toolStripButtonCircle.Size = new System.Drawing.Size(34, 36);
             this.toolStripButtonCircle.Text = "Инструмент «Круг»";
             this.toolStripButtonCircle.ToolTipText = "Инструмент «Круг»";
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox.MinimumSize = new System.Drawing.Size(1, 1);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(784, 561);
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
+            this.pictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
             // 
             // frmMain
             // 
