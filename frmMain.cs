@@ -63,6 +63,11 @@ namespace graphic_editor
             ShapesList.currentShape = ShapesList.GetLastShape();
             ShapesList.currentShape.x = e.X;
             ShapesList.currentShape.y = e.Y;
+            if (ShapesList.currentShape.GetType() != ShapesList.availableShapes[0].GetType())
+            {
+                ShapesList.currentShape.end_x = e.X;
+                ShapesList.currentShape.end_y = e.Y;
+            }
             isMouseButtonPressed = true;
             RepaintPictureBox();
         }
