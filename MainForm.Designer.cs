@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ToolStrip = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonLine = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonRectangle = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonSquare = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonEllipse = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonCircle = new System.Windows.Forms.ToolStripButton();
+            this.ToolStripButtonLine = new System.Windows.Forms.ToolStripButton();
+            this.ToolStripButtonRectangle = new System.Windows.Forms.ToolStripButton();
+            this.ToolStripButtonSquare = new System.Windows.Forms.ToolStripButton();
+            this.ToolStripButtonEllipse = new System.Windows.Forms.ToolStripButton();
+            this.ToolStripButtonCircle = new System.Windows.Forms.ToolStripButton();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.ToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -46,11 +46,11 @@
             this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.ToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonLine,
-            this.toolStripButtonRectangle,
-            this.toolStripButtonSquare,
-            this.toolStripButtonEllipse,
-            this.toolStripButtonCircle});
+            this.ToolStripButtonLine,
+            this.ToolStripButtonRectangle,
+            this.ToolStripButtonSquare,
+            this.ToolStripButtonEllipse,
+            this.ToolStripButtonCircle});
             this.ToolStrip.Location = new System.Drawing.Point(0, 0);
             this.ToolStrip.Name = "ToolStrip";
             this.ToolStrip.Size = new System.Drawing.Size(37, 561);
@@ -58,58 +58,58 @@
             this.ToolStrip.Text = "ToolStrip";
             this.ToolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ToolStrip_ItemClicked);
             // 
-            // toolStripButtonLine
+            // ToolStripButtonLine
             // 
-            this.toolStripButtonLine.CheckOnClick = true;
-            this.toolStripButtonLine.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonLine.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonLine.Image")));
-            this.toolStripButtonLine.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonLine.Name = "toolStripButtonLine";
-            this.toolStripButtonLine.Size = new System.Drawing.Size(34, 36);
-            this.toolStripButtonLine.Text = "Инструмент «Линия»";
+            this.ToolStripButtonLine.CheckOnClick = true;
+            this.ToolStripButtonLine.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ToolStripButtonLine.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripButtonLine.Image")));
+            this.ToolStripButtonLine.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripButtonLine.Name = "ToolStripButtonLine";
+            this.ToolStripButtonLine.Size = new System.Drawing.Size(34, 36);
+            this.ToolStripButtonLine.Text = "Инструмент «Линия»";
             // 
-            // toolStripButtonRectangle
+            // ToolStripButtonRectangle
             // 
-            this.toolStripButtonRectangle.CheckOnClick = true;
-            this.toolStripButtonRectangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonRectangle.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonRectangle.Image")));
-            this.toolStripButtonRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonRectangle.Name = "toolStripButtonRectangle";
-            this.toolStripButtonRectangle.Size = new System.Drawing.Size(34, 36);
-            this.toolStripButtonRectangle.Text = "Инструмент «Прямоугольник»";
-            this.toolStripButtonRectangle.ToolTipText = "Инструмент «Прямоугольник»";
+            this.ToolStripButtonRectangle.CheckOnClick = true;
+            this.ToolStripButtonRectangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ToolStripButtonRectangle.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripButtonRectangle.Image")));
+            this.ToolStripButtonRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripButtonRectangle.Name = "ToolStripButtonRectangle";
+            this.ToolStripButtonRectangle.Size = new System.Drawing.Size(34, 36);
+            this.ToolStripButtonRectangle.Text = "Инструмент «Прямоугольник»";
+            this.ToolStripButtonRectangle.ToolTipText = "Инструмент «Прямоугольник»";
             // 
-            // toolStripButtonSquare
+            // ToolStripButtonSquare
             // 
-            this.toolStripButtonSquare.CheckOnClick = true;
-            this.toolStripButtonSquare.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSquare.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSquare.Image")));
-            this.toolStripButtonSquare.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSquare.Name = "toolStripButtonSquare";
-            this.toolStripButtonSquare.Size = new System.Drawing.Size(34, 36);
-            this.toolStripButtonSquare.Text = "Инструмент «Квадрат»";
-            this.toolStripButtonSquare.ToolTipText = "Инструмент «Квадрат»";
+            this.ToolStripButtonSquare.CheckOnClick = true;
+            this.ToolStripButtonSquare.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ToolStripButtonSquare.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripButtonSquare.Image")));
+            this.ToolStripButtonSquare.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripButtonSquare.Name = "ToolStripButtonSquare";
+            this.ToolStripButtonSquare.Size = new System.Drawing.Size(34, 36);
+            this.ToolStripButtonSquare.Text = "Инструмент «Квадрат»";
+            this.ToolStripButtonSquare.ToolTipText = "Инструмент «Квадрат»";
             // 
-            // toolStripButtonEllipse
+            // ToolStripButtonEllipse
             // 
-            this.toolStripButtonEllipse.CheckOnClick = true;
-            this.toolStripButtonEllipse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonEllipse.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEllipse.Image")));
-            this.toolStripButtonEllipse.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonEllipse.Name = "toolStripButtonEllipse";
-            this.toolStripButtonEllipse.Size = new System.Drawing.Size(34, 36);
-            this.toolStripButtonEllipse.Text = "Инструмент «Эллипс»";
+            this.ToolStripButtonEllipse.CheckOnClick = true;
+            this.ToolStripButtonEllipse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ToolStripButtonEllipse.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripButtonEllipse.Image")));
+            this.ToolStripButtonEllipse.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripButtonEllipse.Name = "ToolStripButtonEllipse";
+            this.ToolStripButtonEllipse.Size = new System.Drawing.Size(34, 36);
+            this.ToolStripButtonEllipse.Text = "Инструмент «Эллипс»";
             // 
-            // toolStripButtonCircle
+            // ToolStripButtonCircle
             // 
-            this.toolStripButtonCircle.CheckOnClick = true;
-            this.toolStripButtonCircle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonCircle.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCircle.Image")));
-            this.toolStripButtonCircle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonCircle.Name = "toolStripButtonCircle";
-            this.toolStripButtonCircle.Size = new System.Drawing.Size(34, 36);
-            this.toolStripButtonCircle.Text = "Инструмент «Круг»";
-            this.toolStripButtonCircle.ToolTipText = "Инструмент «Круг»";
+            this.ToolStripButtonCircle.CheckOnClick = true;
+            this.ToolStripButtonCircle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ToolStripButtonCircle.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripButtonCircle.Image")));
+            this.ToolStripButtonCircle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripButtonCircle.Name = "ToolStripButtonCircle";
+            this.ToolStripButtonCircle.Size = new System.Drawing.Size(34, 36);
+            this.ToolStripButtonCircle.Text = "Инструмент «Круг»";
+            this.ToolStripButtonCircle.ToolTipText = "Инструмент «Круг»";
             // 
             // pictureBox
             // 
@@ -146,11 +146,11 @@
 
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.ToolStrip ToolStrip;
-        private System.Windows.Forms.ToolStripButton toolStripButtonLine;
-        private System.Windows.Forms.ToolStripButton toolStripButtonRectangle;
-        private System.Windows.Forms.ToolStripButton toolStripButtonSquare;
-        private System.Windows.Forms.ToolStripButton toolStripButtonEllipse;
-        private System.Windows.Forms.ToolStripButton toolStripButtonCircle;
+        private System.Windows.Forms.ToolStripButton ToolStripButtonLine;
+        private System.Windows.Forms.ToolStripButton ToolStripButtonRectangle;
+        private System.Windows.Forms.ToolStripButton ToolStripButtonSquare;
+        private System.Windows.Forms.ToolStripButton ToolStripButtonEllipse;
+        private System.Windows.Forms.ToolStripButton ToolStripButtonCircle;
     }
 }
 
