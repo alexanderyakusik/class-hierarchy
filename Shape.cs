@@ -4,15 +4,15 @@ namespace class_hierarchy
 {
     public abstract class Shape
     {
-        public int x { get; }
-        public int y { get; }
+        public int X { get; }
+        public int Y { get; }
 
         public Shape (int x, int y)
         {
-            this.x = x;
-            this.y = y;
+            X = x;
+            Y = y;
         }
 
-        public abstract void Draw(Graphics g, Brush brush); 
+        public abstract void Draw(Graphics g, Pen pen); 
     }
 }

@@ -2,23 +2,20 @@
 
 namespace class_hierarchy
 {
-    public class Ellipse : Dot
+    public class Ellipse : Shape
     {
-        public int width { get; }
-        public int height { get; }
+        public int Width { get; }
+        public int Height { get; }
 
         public Ellipse(int x, int y, int width, int height) : base(x, y)
         {
-            this.width = width;
-            this.height = height;
+            Width = width;
+            Height = height;
         }
 
-        public override void Draw(Graphics g, Brush brush)
+        public override void Draw(Graphics g, Pen pen)
         {
-            using (var pen = new Pen(brush))
-            {
-                g.DrawEllipse(pen, x, y, width, height);
-            }
+            g.DrawEllipse(pen, X, Y, Width, Height);
         }
     }
 }

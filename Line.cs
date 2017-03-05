@@ -2,23 +2,20 @@
 
 namespace class_hierarchy
 {
-    public class Line : Dot
+    public class Line : Shape
     {
-        public int end_x { get; }
-        public int end_y { get; }
+        public int EndX { get; }
+        public int EndY { get; }
 
         public Line(int x, int y, int end_x, int end_y) : base(x, y)
         {
-            this.end_x = end_x;
-            this.end_y = end_y;
+            EndX = end_x;
+            EndY = end_y;
         }
 
-        public override void Draw(Graphics g, Brush brush)
+        public override void Draw(Graphics g, Pen pen)
         {
-            using (var pen = new Pen(brush))
-            {
-                g.DrawLine(pen, x, y, end_x, end_y);
-            }
+            g.DrawLine(pen, X, Y, EndX, EndY);
         }
     }
 }
