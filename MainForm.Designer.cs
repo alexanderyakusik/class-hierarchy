@@ -35,9 +35,9 @@
             this.ToolStripButtonSquare = new System.Windows.Forms.ToolStripButton();
             this.ToolStripButtonEllipse = new System.Windows.Forms.ToolStripButton();
             this.ToolStripButtonCircle = new System.Windows.Forms.ToolStripButton();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.PictureBox = new System.Windows.Forms.PictureBox();
             this.ToolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // ToolStrip
@@ -116,17 +116,18 @@
             this.ToolStripButtonCircle.ToolTipText = "Инструмент «Круг»";
             this.ToolStripButtonCircle.Click += new System.EventHandler(this.ToolStripButtonCircle_Click);
             // 
-            // pictureBox
+            // PictureBox
             // 
-            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox.MinimumSize = new System.Drawing.Size(1, 1);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(784, 561);
-            this.pictureBox.TabIndex = 0;
-            this.pictureBox.TabStop = false;
+            this.PictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PictureBox.Location = new System.Drawing.Point(0, 0);
+            this.PictureBox.MinimumSize = new System.Drawing.Size(1, 1);
+            this.PictureBox.Name = "PictureBox";
+            this.PictureBox.Size = new System.Drawing.Size(784, 561);
+            this.PictureBox.TabIndex = 0;
+            this.PictureBox.TabStop = false;
+            this.PictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseDown);
+            this.PictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseMove);
+            this.PictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseUp);
             // 
             // MainForm
             // 
@@ -134,14 +135,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.ToolStrip);
-            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.PictureBox);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Графический редактор";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainForm_Paint);
             this.ToolStrip.ResumeLayout(false);
             this.ToolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,7 +150,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.PictureBox PictureBox;
         private System.Windows.Forms.ToolStrip ToolStrip;
         private System.Windows.Forms.ToolStripButton ToolStripButtonLine;
         private System.Windows.Forms.ToolStripButton ToolStripButtonRectangle;
