@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace graphics_editor
 {
@@ -9,7 +10,7 @@ namespace graphics_editor
 
         public override void Draw(Graphics g, Pen pen)
         {
-            g.DrawRectangle(pen, X, Y, Width, Height);
+            g.DrawRectangle(pen, Math.Min(X, EndX), Math.Min(Y, EndY), Math.Max(X, EndX), Math.Max(X, EndX));
         }
     }
 }
