@@ -1,6 +1,6 @@
 ﻿namespace class_hierarchy
 {
-    partial class frmMain
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.ToolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonLine = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonRectangle = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSquare = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonEllipse = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCircle = new System.Windows.Forms.ToolStripButton();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.toolStrip.SuspendLayout();
+            this.ToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // toolStrip
+            // ToolStrip
             // 
-            this.toolStrip.Dock = System.Windows.Forms.DockStyle.Left;
-            this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStrip.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.ToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonLine,
             this.toolStripButtonRectangle,
             this.toolStripButtonSquare,
             this.toolStripButtonEllipse,
             this.toolStripButtonCircle});
-            this.toolStrip.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(37, 561);
-            this.toolStrip.TabIndex = 1;
-            this.toolStrip.Text = "toolStrip";
-            this.toolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip_ItemClicked);
+            this.ToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.ToolStrip.Name = "ToolStrip";
+            this.ToolStrip.Size = new System.Drawing.Size(37, 561);
+            this.ToolStrip.TabIndex = 1;
+            this.ToolStrip.Text = "ToolStrip";
+            this.ToolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ToolStrip_ItemClicked);
             // 
             // toolStripButtonLine
             // 
@@ -123,19 +123,19 @@
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
-            // frmMain
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.toolStrip);
+            this.Controls.Add(this.ToolStrip);
             this.Controls.Add(this.pictureBox);
-            this.Name = "frmMain";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Графический редактор";
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmMain_Paint);
-            this.toolStrip.ResumeLayout(false);
-            this.toolStrip.PerformLayout();
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainForm_Paint);
+            this.ToolStrip.ResumeLayout(false);
+            this.ToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -145,7 +145,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox;
-        private System.Windows.Forms.ToolStrip toolStrip;
+        private System.Windows.Forms.ToolStrip ToolStrip;
         private System.Windows.Forms.ToolStripButton toolStripButtonLine;
         private System.Windows.Forms.ToolStripButton toolStripButtonRectangle;
         private System.Windows.Forms.ToolStripButton toolStripButtonSquare;
