@@ -5,39 +5,27 @@ namespace graphics_editor
 {
     public class Rectangle : Shape
     {
-        public int Width { get; }
-        public int Height { get; }
+        public int Width { get; protected set; }
+        public int Height { get; protected set; }
 
         public override void Draw(Graphics g, Pen pen)
         {
+            g.DrawRectangle(pen, Math.Min(X, EndX), Math.Min(Y, EndY), Math.Max(X, EndX), Math.Max(X, EndX));
+        }
+
+        public override void RecalculateProperties()
+        {
             var minX = Math.Min(X, EndX);
-            var minY = Math.Min(Y, EndY);
             var maxX = Math.Max(X, EndX);
+            var minY = Math.Min(Y, EndY);
             var maxY = Math.Max(Y, EndY);
-            var deltaX = Math.Abs(EndX - X);
-            var deltaY = Math.Abs(EndY - Y);
-            if (deltaX < deltaY)
-            {
-                if (Y == minY)
-                {
-                    g.DrawRectangle(pen, minX, minY, maxX, minX + deltaX);
-                }
-                else
-                {
-                    g.DrawRectangle(pen, minX, maxY - deltaX, maxX, maxY);
-                }
-            }
-            else
-            {
-                if (X == minX)
-                {
-                    g.DrawRectangle(pen, minX, minY, minX + deltaY, maxY);
-                }
-                else
-                {
-                    g.DrawRectangle(pen, maxX - deltaY, minY, maxX, maxY);
-                }
-            }
+            X = minX;
+            EndX = maxX;
+            Y = minY;
+            EndY = maxY;
+
+            Width = Math.Abs(EndX - X);
+            Height = Math.Abs(EndY - Y);
         }
     }
 }

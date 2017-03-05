@@ -9,6 +9,7 @@ namespace graphics_editor
         public int EndX { get; set; }
         public int EndY { get; set; }
 
-        public abstract void Draw(Graphics g, Pen pen); 
+        public abstract void Draw(Graphics g, Pen pen);
+        public abstract void RecalculateProperties();
     }
 }

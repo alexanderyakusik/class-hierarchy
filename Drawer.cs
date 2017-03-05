@@ -13,7 +13,7 @@ namespace graphics_editor
             ShapesList.Shapes.ForEach(item => item.Draw(g, pen));
         }
 
-        public static void CreateCurrentShape(int x, int y)
+        public static void CreateShape(int x, int y)
         {
             currentShape = (Shape)Activator.CreateInstance(CurrentShapeType);
             currentShape.X = x;
@@ -21,10 +21,15 @@ namespace graphics_editor
             ShapesList.Add(currentShape);
         }
 
-        public static void SetCurrentShapeCoordinates(int x, int y)
+        public static void SetShapeCoordinates(int x, int y)
         {
             currentShape.X = x;
             currentShape.Y = y;
+        }
+
+        public static void RecalculateShapeProperties()
+        {
+            currentShape.RecalculateProperties();
         }
     }
 }

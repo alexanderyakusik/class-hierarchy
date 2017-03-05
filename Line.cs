@@ -8,5 +8,7 @@ namespace graphics_editor
         {
             g.DrawLine(pen, X, Y, EndX, EndY);
         }
+
+        public override void RecalculateProperties(int x, int y) { }
     }
 }
