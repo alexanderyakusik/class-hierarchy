@@ -1,38 +1,33 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 
 namespace graphics_editor
 {
-    public class Square : Rectangle 
+    public class Square : Rectangle
     {
         public override void Draw(Graphics g, Pen pen)
         {
-            var minX = Math.Min(X, EndX);
-            var minY = Math.Min(Y, EndY);
-            var maxX = Math.Max(X, EndX);
-            var maxY = Math.Max(Y, EndY);
-            var deltaX = Math.Abs(EndX - X);
-            var deltaY = Math.Abs(EndY - Y);
-            if (deltaX < deltaY)
+            var parameters = new ShapeParameters(this);
+
+            if (parameters.deltaX < parameters.deltaY)
             {
-                if (Y == minY)
+                if (Y == parameters.minY)
                 {
-                    g.DrawRectangle(pen, minX, minY, maxX, minX + deltaX);
+                    g.DrawRectangle(pen, parameters.minX, parameters.minY, parameters.maxX, parameters.minX + parameters.deltaX);
                 }
                 else
                 {
-                    g.DrawRectangle(pen, minX, maxY - deltaX, maxX, maxY);
+                    g.DrawRectangle(pen, parameters.minX, parameters.maxY - parameters.deltaX, parameters.maxX, parameters.maxY);
                 }
             }
             else
             {
-                if (X == minX)
+                if (X == parameters.minX)
                 {
-                    g.DrawRectangle(pen, minX, minY, minX + deltaY, maxY);
+                    g.DrawRectangle(pen, parameters.minX, parameters.minY, parameters.minX + parameters.deltaY, parameters.maxY);
                 }
                 else
                 {
-                    g.DrawRectangle(pen, maxX - deltaY, minY, maxX, maxY);
+                    g.DrawRectangle(pen, parameters.maxX - parameters.deltaY, parameters.minY, parameters.maxX, parameters.maxY);
                 }
             }
         }
