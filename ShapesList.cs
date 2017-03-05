@@ -12,9 +12,9 @@ namespace class_hierarchy
             shapes.Add(shape);
         }
 
-        public static void DrawAllShapes(Graphics g, Brush brush)
+        public static void DrawAllShapes(Graphics g, Pen pen)
         {
-            shapes.ForEach(item => item.Draw(g, brush));
+            shapes.ForEach(item => item.Draw(g, pen));
         }
     }
 }

@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Circle.cs" />
-    <Compile Include="Dot.cs" />
     <Compile Include="Ellipse.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -87,9 +86,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="icons\button_icon_pencil_32x32.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="icons\button_icon_line_32x32.png" />

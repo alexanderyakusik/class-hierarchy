@@ -20,8 +20,8 @@ namespace class_hierarchy
             pictureBox.Image = bmp;
             using (Graphics g = Graphics.FromImage(pictureBox.Image))
             {
-                var brush = new SolidBrush(Color.Black);
-                ShapesList.DrawAllShapes(g, brush);
+                var pen = new Pen(new SolidBrush(Color.Black));
+                ShapesList.DrawAllShapes(g, pen);
             }
         }
 
