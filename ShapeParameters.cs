@@ -10,6 +10,7 @@ namespace graphics_editor
         public int maxY { get; }
         public int deltaX { get; }
         public int deltaY { get; }
+        public int minSide { get; }
 
         public ShapeParameters(Shape shape)
         {
@@ -19,6 +20,7 @@ namespace graphics_editor
             maxY = Math.Max(shape.Y, shape.EndY);
             deltaX = Math.Abs(shape.EndX - shape.X);
             deltaY = Math.Abs(shape.EndY - shape.Y);
+            minSide = Math.Min(deltaX, deltaY);
         }
     }
 }

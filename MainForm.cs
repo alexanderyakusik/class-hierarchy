@@ -64,6 +64,7 @@ namespace graphics_editor
         {
             isMouseDown = true;
             Drawer.CreateShape(e.X, e.Y);
+            Drawer.SetShapeCoordinates(e.X, e.Y);
         }
 
         private void PictureBox_MouseMove(object sender, MouseEventArgs e)

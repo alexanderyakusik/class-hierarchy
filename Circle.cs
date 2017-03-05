@@ -12,22 +12,22 @@ namespace graphics_editor
             {
                 if (Y == parameters.minY)
                 {
-                    g.DrawEllipse(pen, parameters.minX, parameters.minY, parameters.maxX, parameters.minX + parameters.deltaX);
+                    g.DrawEllipse(pen, parameters.minX, parameters.minY, parameters.deltaX, parameters.deltaX);
                 }
                 else
                 {
-                    g.DrawEllipse(pen, parameters.minX, parameters.maxY - parameters.deltaX, parameters.maxX, parameters.maxY);
+                    g.DrawEllipse(pen, parameters.minX, parameters.maxY - parameters.deltaX, parameters.deltaX, parameters.deltaX);
                 }
             }
             else
             {
                 if (X == parameters.minX)
                 {
-                    g.DrawEllipse(pen, parameters.minX, parameters.minY, parameters.minX + parameters.deltaY, parameters.maxY);
+                    g.DrawEllipse(pen, parameters.minX, parameters.minY, parameters.deltaY, parameters.deltaY);
                 }
                 else
                 {
-                    g.DrawEllipse(pen, parameters.maxX - parameters.deltaY, parameters.minY, parameters.maxX, parameters.maxY);
+                    g.DrawEllipse(pen, parameters.maxX - parameters.deltaY, parameters.minY, parameters.deltaY, parameters.deltaY);
                 }
             }
         }

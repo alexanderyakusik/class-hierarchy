@@ -118,11 +118,11 @@
             // 
             // PictureBox
             // 
-            this.PictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PictureBox.Location = new System.Drawing.Point(0, 0);
+            this.PictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PictureBox.Location = new System.Drawing.Point(40, 0);
             this.PictureBox.MinimumSize = new System.Drawing.Size(1, 1);
             this.PictureBox.Name = "PictureBox";
-            this.PictureBox.Size = new System.Drawing.Size(784, 561);
+            this.PictureBox.Size = new System.Drawing.Size(744, 561);
             this.PictureBox.TabIndex = 0;
             this.PictureBox.TabStop = false;
             this.PictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseDown);

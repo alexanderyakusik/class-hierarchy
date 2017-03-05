@@ -23,8 +23,8 @@ namespace graphics_editor
 
         public static void SetShapeCoordinates(int x, int y)
         {
-            currentShape.X = x;
-            currentShape.Y = y;
+            currentShape.EndX = x;
+            currentShape.EndY = y;
         }
 
         public static void RecalculateShapeProperties()
