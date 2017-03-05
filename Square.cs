@@ -12,22 +12,22 @@ namespace graphics_editor
             {
                 if (Y == parameters.minY)
                 {
-                    g.DrawRectangle(pen, parameters.minX, parameters.minY, parameters.deltaX, parameters.deltaX);
+                    g.DrawRectangle(pen, parameters.minX, parameters.minY, parameters.minSide, parameters.minSide);
                 }
                 else
                 {
-                    g.DrawRectangle(pen, parameters.minX, parameters.maxY - parameters.deltaX, parameters.deltaX, parameters.deltaX);
+                    g.DrawRectangle(pen, parameters.minX, parameters.maxY - parameters.minSide, parameters.minSide, parameters.minSide);
                 }
             }
             else
             {
                 if (X == parameters.minX)
                 { 
-                    g.DrawRectangle(pen, parameters.minX, parameters.minY, parameters.deltaY, parameters.deltaY);
+                    g.DrawRectangle(pen, parameters.minX, parameters.minY, parameters.minSide, parameters.minSide);
                 }
                 else
                 {
-                    g.DrawRectangle(pen, parameters.maxX - parameters.deltaY, parameters.minY, parameters.deltaY, parameters.deltaY);
+                    g.DrawRectangle(pen, parameters.maxX - parameters.minSide, parameters.minY, parameters.minSide, parameters.minSide);
                 }
             }
         }

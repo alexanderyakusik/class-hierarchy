@@ -12,17 +12,13 @@
                 {
                     X = parameters.minX;
                     Y = parameters.minY;
-                    Width = Height = parameters.deltaX;
-                    EndX = X + Width;
-                    EndY = Y + Height;
+                    SetWidthHeightAndCoords(parameters.minSide);
                 }
                 else
                 {
                     X = parameters.minX;
-                    Y = parameters.maxY - parameters.deltaX;
-                    Width = Height = parameters.deltaX;
-                    EndX = X + Width;
-                    EndY = Y + Height;
+                    Y = parameters.maxY - parameters.minSide;
+                    SetWidthHeightAndCoords(parameters.minSide);
                 }
             }
             else
@@ -31,19 +27,22 @@
                 {
                     X = parameters.minX;
                     Y = parameters.minY;
-                    Width = Height = parameters.deltaY;
-                    EndX = X + Width;
-                    EndY = Y + Height;
+                    SetWidthHeightAndCoords(parameters.minSide);
                 }
                 else
                 {
-                    X = parameters.maxX - parameters.deltaY;
+                    X = parameters.maxX - parameters.minSide;
                     Y = parameters.minY;
-                    Width = Height = parameters.deltaY;
-                    EndX = X + Width;
-                    EndY = Y + Height;
+                    SetWidthHeightAndCoords(parameters.minSide);
                 }
             }
+        }
+
+        private void SetWidthHeightAndCoords(int minSide)
+        {
+            Width = Height = minSide;
+            EndX = X + Width;
+            EndY = Y + Height;
         }
     }
 }
