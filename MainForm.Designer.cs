@@ -1,4 +1,4 @@
-﻿namespace class_hierarchy
+﻿namespace graphics_editor
 {
     partial class MainForm
     {

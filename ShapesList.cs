@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace class_hierarchy
+namespace graphics_editor
 {
     static class ShapesList
     {

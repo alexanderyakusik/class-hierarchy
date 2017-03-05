@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace class_hierarchy
+namespace graphics_editor
 {
     static class Program
     {

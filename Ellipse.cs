@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace class_hierarchy
+namespace graphics_editor
 {
     public class Ellipse : Shape
     {

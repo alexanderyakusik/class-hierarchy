@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 using System.Drawing;
 
-namespace class_hierarchy
+namespace graphics_editor
 {
     public partial class MainForm : Form
     {
@@ -21,7 +21,7 @@ namespace class_hierarchy
             using (Graphics g = Graphics.FromImage(pictureBox.Image))
             {
                 var pen = new Pen(new SolidBrush(Color.Black));
-                ShapesList.DrawAllShapes(g, pen);
+                Drawer.DrawAllShapes(g, pen);
             }
         }
 
