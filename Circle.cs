@@ -2,7 +2,7 @@
 
 namespace graphics_editor
 {
-    public class Circle : Ellipse
+    public class Circle : RegularShape
     {
         public override void Draw(Graphics g, Pen pen)
         {

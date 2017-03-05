@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace graphics_editor
 {
-    public class Rectangle : Shape
+    public class Rectangle : IrregularShape
     {
         public override void Draw(Graphics g, Pen pen)
         {

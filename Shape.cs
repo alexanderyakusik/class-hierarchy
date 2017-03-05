@@ -12,17 +12,6 @@ namespace graphics_editor
         public int Height { get; protected set; }
 
         public abstract void Draw(Graphics g, Pen pen);
-
-        public virtual void RecalculateProperties()
-        {
-            var shapeParameters = new ShapeParameters(this);
-
-            Height = shapeParameters.deltaX;
-            Width = shapeParameters.deltaY;
-            X = shapeParameters.minX;
-            EndX = shapeParameters.maxX;
-            Y = shapeParameters.minY;
-            EndY = shapeParameters.maxY;
-        }
+        public abstract void RecalculateProperties();
     }
 }

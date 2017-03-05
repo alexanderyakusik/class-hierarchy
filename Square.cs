@@ -2,7 +2,7 @@
 
 namespace graphics_editor
 {
-    public class Square : Rectangle
+    public class Square : RegularShape
     {
         public override void Draw(Graphics g, Pen pen)
         {
