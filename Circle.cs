@@ -7,13 +7,33 @@ namespace graphics_editor
     {
         public override void Draw(Graphics g, Pen pen)
         {
-            if (Math.Abs(EndX - X) < Math.Abs(EndY - Y))
+            var minX = Math.Min(X, EndX);
+            var minY = Math.Min(Y, EndY);
+            var maxX = Math.Max(X, EndX);
+            var maxY = Math.Max(Y, EndY);
+            var deltaX = Math.Abs(EndX - X);
+            var deltaY = Math.Abs(EndY - Y);
+            if (deltaX < deltaY)
             {
-                g.DrawEllipse(pen, Math.Min(X, EndX), Math.Min(X, EndX), Math.Max(X, EndX), Math.Max(X, EndX));
+                if (Y == minY)
+                {
+                    g.DrawEllipse(pen, minX, minY, maxX, minX + deltaX);
+                }
+                else
+                {
+                    g.DrawEllipse(pen, minX, maxY - deltaX, maxX, maxY);
+                }
             }
             else
             {
-                g.DrawEllipse(pen, Math.Min(Y, EndY), Math.Min(Y, EndY), Math.Max(Y, EndY), Math.Max(Y, EndY));
+                if (X == minX)
+                {
+                    g.DrawEllipse(pen, minX, minY, minX + deltaY, maxY);
+                }
+                else
+                {
+                    g.DrawEllipse(pen, maxX - deltaY, minY, maxX, maxY);
+                }
             }
         }
     }
