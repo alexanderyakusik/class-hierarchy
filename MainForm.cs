@@ -32,5 +32,30 @@ namespace graphics_editor
                 if (btn != e.ClickedItem) btn.Checked = false;
             }
         }
+
+        private void ToolStripButtonLine_Click(object sender, System.EventArgs e)
+        {
+            Drawer.CurrentShapeType = typeof(Line);
+        }
+
+        private void ToolStripButtonRectangle_Click(object sender, System.EventArgs e)
+        {
+            Drawer.CurrentShapeType = typeof(Rectangle);
+        }
+
+        private void ToolStripButtonSquare_Click(object sender, System.EventArgs e)
+        {
+            Drawer.CurrentShapeType = typeof(Square);
+        }
+
+        private void ToolStripButtonEllipse_Click(object sender, System.EventArgs e)
+        {
+            Drawer.CurrentShapeType = typeof(Ellipse);
+        }
+
+        private void ToolStripButtonCircle_Click(object sender, System.EventArgs e)
+        {
+            Drawer.CurrentShapeType = typeof(Circle);
+        }
     }
 }

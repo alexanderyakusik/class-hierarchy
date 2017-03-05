@@ -67,6 +67,7 @@
             this.ToolStripButtonLine.Name = "ToolStripButtonLine";
             this.ToolStripButtonLine.Size = new System.Drawing.Size(34, 36);
             this.ToolStripButtonLine.Text = "Инструмент «Линия»";
+            this.ToolStripButtonLine.Click += new System.EventHandler(this.ToolStripButtonLine_Click);
             // 
             // ToolStripButtonRectangle
             // 
@@ -78,6 +79,7 @@
             this.ToolStripButtonRectangle.Size = new System.Drawing.Size(34, 36);
             this.ToolStripButtonRectangle.Text = "Инструмент «Прямоугольник»";
             this.ToolStripButtonRectangle.ToolTipText = "Инструмент «Прямоугольник»";
+            this.ToolStripButtonRectangle.Click += new System.EventHandler(this.ToolStripButtonRectangle_Click);
             // 
             // ToolStripButtonSquare
             // 
@@ -89,6 +91,7 @@
             this.ToolStripButtonSquare.Size = new System.Drawing.Size(34, 36);
             this.ToolStripButtonSquare.Text = "Инструмент «Квадрат»";
             this.ToolStripButtonSquare.ToolTipText = "Инструмент «Квадрат»";
+            this.ToolStripButtonSquare.Click += new System.EventHandler(this.ToolStripButtonSquare_Click);
             // 
             // ToolStripButtonEllipse
             // 
@@ -99,6 +102,7 @@
             this.ToolStripButtonEllipse.Name = "ToolStripButtonEllipse";
             this.ToolStripButtonEllipse.Size = new System.Drawing.Size(34, 36);
             this.ToolStripButtonEllipse.Text = "Инструмент «Эллипс»";
+            this.ToolStripButtonEllipse.Click += new System.EventHandler(this.ToolStripButtonEllipse_Click);
             // 
             // ToolStripButtonCircle
             // 
@@ -110,6 +114,7 @@
             this.ToolStripButtonCircle.Size = new System.Drawing.Size(34, 36);
             this.ToolStripButtonCircle.Text = "Инструмент «Круг»";
             this.ToolStripButtonCircle.ToolTipText = "Инструмент «Круг»";
+            this.ToolStripButtonCircle.Click += new System.EventHandler(this.ToolStripButtonCircle_Click);
             // 
             // pictureBox
             // 
