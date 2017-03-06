@@ -1,27 +1,34 @@
-﻿namespace graphic_editor
-{
-    public class Circle : Ellipse
-    {
-        public Circle(int x, int y, int radius) : base (x - radius, y + radius, radius * 2, radius * 2) { }
+﻿using System.Drawing;
 
-        protected override void RecalculateCoords()
+namespace graphics_editor
+{
+    public class Circle : RegularShape
+    {
+        public override void Draw(Graphics g, Pen pen)
         {
-            base.RecalculateCoords();
-            if (width > height)
+            var parameters = new ShapeParameters(this);
+
+            if (parameters.deltaX < parameters.deltaY)
             {
-                width = height;
-                if (end_x == init_x)
-                    end_x = init_x = x - width;
+                if (Y == parameters.minY)
+                {
+                    g.DrawEllipse(pen, parameters.minX, parameters.minY, parameters.minSide, parameters.minSide);
+                }
                 else
-                    end_x = width + x;
+                {
+                    g.DrawEllipse(pen, parameters.minX, parameters.maxY - parameters.minSide, parameters.minSide, parameters.minSide);
+                }
             }
             else
             {
-                height = width;
-                if (end_y == init_y)
-                    end_y = init_y = y - height;
+                if (X == parameters.minX)
+                {
+                    g.DrawEllipse(pen, parameters.minX, parameters.minY, parameters.minSide, parameters.minSide);
+                }
                 else
-                    end_y = height + y;
+                {
+                    g.DrawEllipse(pen, parameters.maxX - parameters.minSide, parameters.minY, parameters.minSide, parameters.minSide);
+                }
             }
         }
     }

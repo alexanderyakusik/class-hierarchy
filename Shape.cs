@@ -1,25 +1,17 @@
 ﻿using System.Drawing;
 
-namespace graphic_editor
+namespace graphics_editor
 {
     public abstract class Shape
     {
-        public int x { get; set; }
-        public int y { get; set; }
-        public int end_x { get; set; }
-        public int end_y { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+        public int EndX { get; set; }
+        public int EndY { get; set; }
+        public int Width { get; protected set; }
+        public int Height { get; protected set; }
 
-        public Shape (int x, int y)
-        {
-            this.x = x;
-            this.y = y;
-        }
-
-        public Shape Clone()
-        {
-            return (Shape)MemberwiseClone();
-        }
-
-        public abstract void Draw(Graphics g, Brush brush); 
+        public abstract void Draw(Graphics g, Pen pen);
+        public abstract void RecalculateProperties();
     }
 }

@@ -1,18 +1,13 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
-namespace graphic_editor
+namespace graphics_editor
 {
-    public class Ellipse : ComplexShape
+    public class Ellipse : IrregularShape
     {
-        public Ellipse(int x, int y, int width, int height) : base(x, y, width, height) { }
-
-        public override void Draw(Graphics g, Brush brush)
+        public override void Draw(Graphics g, Pen pen)
         {
-            RecalculateCoords();
-            using (var pen = new Pen(brush))
-            {
-                g.DrawEllipse(pen, init_x, init_y, width, height);
-            }
+            g.DrawEllipse(pen, Math.Min(X, EndX), Math.Min(Y, EndY), Math.Abs(EndX - X), Math.Abs(EndY - Y));
         }
     }
 }

@@ -1,21 +1,14 @@
 ﻿using System.Drawing;
 
-namespace graphic_editor
+namespace graphics_editor
 {
-    public class Line : Dot
+    public class Line : Shape
     {
-        public Line(int x, int y, int end_x, int end_y) : base(x, y)
+        public override void Draw(Graphics g, Pen pen)
         {
-            this.end_x = end_x;
-            this.end_y = end_y;
+            g.DrawLine(pen, X, Y, EndX, EndY);
         }
 
-        public override void Draw(Graphics g, Brush brush)
-        {
-            using (var pen = new Pen(brush))
-            {
-                g.DrawLine(pen, x, y, end_x, end_y);
-            }
-        }
+        public override void RecalculateProperties() { }
     }
 }
