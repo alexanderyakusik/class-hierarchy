@@ -6,7 +6,7 @@ namespace graphics_editor
     {
         public static List<Shape> Shapes { get; } = new List<Shape>();
 
-        public static Shape currentShape { get; set; } = null;
+        public static Shape currentShape { get; set; };
 
         public static void Add(Shape shape)
         {
