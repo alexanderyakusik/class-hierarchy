@@ -8,8 +8,8 @@ namespace graphics_editor
         public int Y { get; set; }
         public int EndX { get; set; }
         public int EndY { get; set; }
-        public int Width { get; protected set; }
-        public int Height { get; protected set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
 
         public abstract void Draw(Graphics g, Pen pen);
         public abstract void RecalculateProperties();

@@ -36,8 +36,14 @@
             this.ToolStripButtonEllipse = new System.Windows.Forms.ToolStripButton();
             this.ToolStripButtonCircle = new System.Windows.Forms.ToolStripButton();
             this.PictureBox = new System.Windows.Forms.PictureBox();
+            this.MenuStrip = new System.Windows.Forms.MenuStrip();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.ToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
+            this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // ToolStrip
@@ -51,9 +57,9 @@
             this.ToolStripButtonSquare,
             this.ToolStripButtonEllipse,
             this.ToolStripButtonCircle});
-            this.ToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.ToolStrip.Location = new System.Drawing.Point(0, 24);
             this.ToolStrip.Name = "ToolStrip";
-            this.ToolStrip.Size = new System.Drawing.Size(37, 561);
+            this.ToolStrip.Size = new System.Drawing.Size(37, 537);
             this.ToolStrip.TabIndex = 1;
             this.ToolStrip.Text = "ToolStrip";
             this.ToolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ToolStrip_ItemClicked);
@@ -129,13 +135,47 @@
             this.PictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseMove);
             this.PictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseUp);
             // 
+            // MenuStrip
+            // 
+            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.файлToolStripMenuItem});
+            this.MenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MenuStrip.Name = "MenuStrip";
+            this.MenuStrip.Size = new System.Drawing.Size(784, 24);
+            this.MenuStrip.TabIndex = 2;
+            // 
+            // файлToolStripMenuItem
+            // 
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.LoadToolStripMenuItem,
+            this.SaveAsToolStripMenuItem});
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.файлToolStripMenuItem.Text = "Файл";
+            // 
+            // LoadToolStripMenuItem
+            // 
+            this.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem";
+            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.LoadToolStripMenuItem.Text = "Открыть";
+            this.LoadToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
+            // 
+            // SaveAsToolStripMenuItem
+            // 
+            this.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem";
+            this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.SaveAsToolStripMenuItem.Text = "Сохранить как";
+            this.SaveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.ToolStrip);
+            this.Controls.Add(this.MenuStrip);
             this.Controls.Add(this.PictureBox);
+            this.MainMenuStrip = this.MenuStrip;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Графический редактор";
@@ -143,6 +183,8 @@
             this.ToolStrip.ResumeLayout(false);
             this.ToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
+            this.MenuStrip.ResumeLayout(false);
+            this.MenuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,6 +199,11 @@
         private System.Windows.Forms.ToolStripButton ToolStripButtonSquare;
         private System.Windows.Forms.ToolStripButton ToolStripButtonEllipse;
         private System.Windows.Forms.ToolStripButton ToolStripButtonCircle;
+        private System.Windows.Forms.MenuStrip MenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem LoadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SaveAsToolStripMenuItem;
+        private System.Windows.Forms.FolderBrowserDialog FolderBrowserDialog;
     }
 }
 
