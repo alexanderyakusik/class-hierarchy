@@ -28,107 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.ToolStrip = new System.Windows.Forms.ToolStrip();
-            this.ToolStripButtonLine = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripButtonRectangle = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripButtonSquare = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripButtonEllipse = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripButtonCircle = new System.Windows.Forms.ToolStripButton();
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.ToolStrip.SuspendLayout();
+            this.ShapesListBox = new System.Windows.Forms.ListBox();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.LineRadioButton = new System.Windows.Forms.RadioButton();
+            this.RectangleRadioButton = new System.Windows.Forms.RadioButton();
+            this.SquareRadioButton = new System.Windows.Forms.RadioButton();
+            this.EllipseRadioButton = new System.Windows.Forms.RadioButton();
+            this.CircleRadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.MenuStrip.SuspendLayout();
+            this.MainPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // ToolStrip
-            // 
-            this.ToolStrip.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.ToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripButtonLine,
-            this.ToolStripButtonRectangle,
-            this.ToolStripButtonSquare,
-            this.ToolStripButtonEllipse,
-            this.ToolStripButtonCircle});
-            this.ToolStrip.Location = new System.Drawing.Point(0, 24);
-            this.ToolStrip.Name = "ToolStrip";
-            this.ToolStrip.Size = new System.Drawing.Size(37, 537);
-            this.ToolStrip.TabIndex = 1;
-            this.ToolStrip.Text = "ToolStrip";
-            this.ToolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ToolStrip_ItemClicked);
-            // 
-            // ToolStripButtonLine
-            // 
-            this.ToolStripButtonLine.CheckOnClick = true;
-            this.ToolStripButtonLine.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripButtonLine.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripButtonLine.Image")));
-            this.ToolStripButtonLine.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripButtonLine.Name = "ToolStripButtonLine";
-            this.ToolStripButtonLine.Size = new System.Drawing.Size(34, 36);
-            this.ToolStripButtonLine.Text = "Инструмент «Линия»";
-            this.ToolStripButtonLine.Click += new System.EventHandler(this.ToolStripButtonLine_Click);
-            // 
-            // ToolStripButtonRectangle
-            // 
-            this.ToolStripButtonRectangle.CheckOnClick = true;
-            this.ToolStripButtonRectangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripButtonRectangle.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripButtonRectangle.Image")));
-            this.ToolStripButtonRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripButtonRectangle.Name = "ToolStripButtonRectangle";
-            this.ToolStripButtonRectangle.Size = new System.Drawing.Size(34, 36);
-            this.ToolStripButtonRectangle.Text = "Инструмент «Прямоугольник»";
-            this.ToolStripButtonRectangle.ToolTipText = "Инструмент «Прямоугольник»";
-            this.ToolStripButtonRectangle.Click += new System.EventHandler(this.ToolStripButtonRectangle_Click);
-            // 
-            // ToolStripButtonSquare
-            // 
-            this.ToolStripButtonSquare.CheckOnClick = true;
-            this.ToolStripButtonSquare.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripButtonSquare.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripButtonSquare.Image")));
-            this.ToolStripButtonSquare.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripButtonSquare.Name = "ToolStripButtonSquare";
-            this.ToolStripButtonSquare.Size = new System.Drawing.Size(34, 36);
-            this.ToolStripButtonSquare.Text = "Инструмент «Квадрат»";
-            this.ToolStripButtonSquare.ToolTipText = "Инструмент «Квадрат»";
-            this.ToolStripButtonSquare.Click += new System.EventHandler(this.ToolStripButtonSquare_Click);
-            // 
-            // ToolStripButtonEllipse
-            // 
-            this.ToolStripButtonEllipse.CheckOnClick = true;
-            this.ToolStripButtonEllipse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripButtonEllipse.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripButtonEllipse.Image")));
-            this.ToolStripButtonEllipse.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripButtonEllipse.Name = "ToolStripButtonEllipse";
-            this.ToolStripButtonEllipse.Size = new System.Drawing.Size(34, 36);
-            this.ToolStripButtonEllipse.Text = "Инструмент «Эллипс»";
-            this.ToolStripButtonEllipse.Click += new System.EventHandler(this.ToolStripButtonEllipse_Click);
-            // 
-            // ToolStripButtonCircle
-            // 
-            this.ToolStripButtonCircle.CheckOnClick = true;
-            this.ToolStripButtonCircle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripButtonCircle.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripButtonCircle.Image")));
-            this.ToolStripButtonCircle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripButtonCircle.Name = "ToolStripButtonCircle";
-            this.ToolStripButtonCircle.Size = new System.Drawing.Size(34, 36);
-            this.ToolStripButtonCircle.Text = "Инструмент «Круг»";
-            this.ToolStripButtonCircle.ToolTipText = "Инструмент «Круг»";
-            this.ToolStripButtonCircle.Click += new System.EventHandler(this.ToolStripButtonCircle_Click);
             // 
             // PictureBox
             // 
-            this.PictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PictureBox.Location = new System.Drawing.Point(40, 0);
+            this.PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureBox.Location = new System.Drawing.Point(124, 24);
             this.PictureBox.MinimumSize = new System.Drawing.Size(1, 1);
             this.PictureBox.Name = "PictureBox";
-            this.PictureBox.Size = new System.Drawing.Size(744, 561);
+            this.PictureBox.Size = new System.Drawing.Size(759, 737);
             this.PictureBox.TabIndex = 0;
             this.PictureBox.TabStop = false;
             this.PictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseDown);
@@ -138,20 +64,20 @@
             // MenuStrip
             // 
             this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem});
+            this.FileToolStripMenuItem});
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip.Name = "MenuStrip";
-            this.MenuStrip.Size = new System.Drawing.Size(784, 24);
+            this.MenuStrip.Size = new System.Drawing.Size(984, 24);
             this.MenuStrip.TabIndex = 2;
             // 
-            // файлToolStripMenuItem
+            // FileToolStripMenuItem
             // 
-            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LoadToolStripMenuItem,
             this.SaveAsToolStripMenuItem});
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.файлToolStripMenuItem.Text = "Файл";
+            this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
+            this.FileToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.FileToolStripMenuItem.Text = "Файл";
             // 
             // LoadToolStripMenuItem
             // 
@@ -167,12 +93,96 @@
             this.SaveAsToolStripMenuItem.Text = "Сохранить как";
             this.SaveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
             // 
+            // ShapesListBox
+            // 
+            this.ShapesListBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ShapesListBox.FormattingEnabled = true;
+            this.ShapesListBox.Location = new System.Drawing.Point(881, 24);
+            this.ShapesListBox.Name = "ShapesListBox";
+            this.ShapesListBox.Size = new System.Drawing.Size(103, 737);
+            this.ShapesListBox.TabIndex = 3;
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.MainPanel.Controls.Add(this.CircleRadioButton);
+            this.MainPanel.Controls.Add(this.EllipseRadioButton);
+            this.MainPanel.Controls.Add(this.SquareRadioButton);
+            this.MainPanel.Controls.Add(this.RectangleRadioButton);
+            this.MainPanel.Controls.Add(this.LineRadioButton);
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.MainPanel.Location = new System.Drawing.Point(0, 24);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(126, 737);
+            this.MainPanel.TabIndex = 4;
+            // 
+            // LineRadioButton
+            // 
+            this.LineRadioButton.AutoSize = true;
+            this.LineRadioButton.Location = new System.Drawing.Point(13, 14);
+            this.LineRadioButton.Name = "LineRadioButton";
+            this.LineRadioButton.Size = new System.Drawing.Size(57, 17);
+            this.LineRadioButton.TabIndex = 0;
+            this.LineRadioButton.TabStop = true;
+            this.LineRadioButton.Text = "Линия";
+            this.LineRadioButton.UseVisualStyleBackColor = true;
+            this.LineRadioButton.CheckedChanged += new System.EventHandler(this.LineRadioButton_CheckedChanged);
+            // 
+            // RectangleRadioButton
+            // 
+            this.RectangleRadioButton.AutoSize = true;
+            this.RectangleRadioButton.Location = new System.Drawing.Point(13, 38);
+            this.RectangleRadioButton.Name = "RectangleRadioButton";
+            this.RectangleRadioButton.Size = new System.Drawing.Size(105, 17);
+            this.RectangleRadioButton.TabIndex = 1;
+            this.RectangleRadioButton.TabStop = true;
+            this.RectangleRadioButton.Text = "Прямоугольник";
+            this.RectangleRadioButton.UseVisualStyleBackColor = true;
+            this.RectangleRadioButton.CheckedChanged += new System.EventHandler(this.RectangleRadioButton_CheckedChanged);
+            // 
+            // SquareRadioButton
+            // 
+            this.SquareRadioButton.AutoSize = true;
+            this.SquareRadioButton.Location = new System.Drawing.Point(13, 62);
+            this.SquareRadioButton.Name = "SquareRadioButton";
+            this.SquareRadioButton.Size = new System.Drawing.Size(67, 17);
+            this.SquareRadioButton.TabIndex = 2;
+            this.SquareRadioButton.TabStop = true;
+            this.SquareRadioButton.Text = "Квадрат";
+            this.SquareRadioButton.UseVisualStyleBackColor = true;
+            this.SquareRadioButton.CheckedChanged += new System.EventHandler(this.SquareRadioButton_CheckedChanged);
+            // 
+            // EllipseRadioButton
+            // 
+            this.EllipseRadioButton.AutoSize = true;
+            this.EllipseRadioButton.Location = new System.Drawing.Point(13, 86);
+            this.EllipseRadioButton.Name = "EllipseRadioButton";
+            this.EllipseRadioButton.Size = new System.Drawing.Size(62, 17);
+            this.EllipseRadioButton.TabIndex = 3;
+            this.EllipseRadioButton.TabStop = true;
+            this.EllipseRadioButton.Text = "Эллипс";
+            this.EllipseRadioButton.UseVisualStyleBackColor = true;
+            this.EllipseRadioButton.CheckedChanged += new System.EventHandler(this.EllipseRadioButton_CheckedChanged);
+            // 
+            // CircleRadioButton
+            // 
+            this.CircleRadioButton.AutoSize = true;
+            this.CircleRadioButton.Location = new System.Drawing.Point(13, 110);
+            this.CircleRadioButton.Name = "CircleRadioButton";
+            this.CircleRadioButton.Size = new System.Drawing.Size(48, 17);
+            this.CircleRadioButton.TabIndex = 4;
+            this.CircleRadioButton.TabStop = true;
+            this.CircleRadioButton.Text = "Круг";
+            this.CircleRadioButton.UseVisualStyleBackColor = true;
+            this.CircleRadioButton.CheckedChanged += new System.EventHandler(this.CircleRadioButton_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.ToolStrip);
+            this.ClientSize = new System.Drawing.Size(984, 761);
+            this.Controls.Add(this.MainPanel);
+            this.Controls.Add(this.ShapesListBox);
             this.Controls.Add(this.MenuStrip);
             this.Controls.Add(this.PictureBox);
             this.MainMenuStrip = this.MenuStrip;
@@ -180,11 +190,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Графический редактор";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainForm_Paint);
-            this.ToolStrip.ResumeLayout(false);
-            this.ToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();
+            this.MainPanel.ResumeLayout(false);
+            this.MainPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,17 +203,18 @@
         #endregion
 
         private System.Windows.Forms.PictureBox PictureBox;
-        private System.Windows.Forms.ToolStrip ToolStrip;
-        private System.Windows.Forms.ToolStripButton ToolStripButtonLine;
-        private System.Windows.Forms.ToolStripButton ToolStripButtonRectangle;
-        private System.Windows.Forms.ToolStripButton ToolStripButtonSquare;
-        private System.Windows.Forms.ToolStripButton ToolStripButtonEllipse;
-        private System.Windows.Forms.ToolStripButton ToolStripButtonCircle;
         private System.Windows.Forms.MenuStrip MenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem LoadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SaveAsToolStripMenuItem;
         private System.Windows.Forms.FolderBrowserDialog FolderBrowserDialog;
+        private System.Windows.Forms.ListBox ShapesListBox;
+        private System.Windows.Forms.Panel MainPanel;
+        private System.Windows.Forms.RadioButton RectangleRadioButton;
+        private System.Windows.Forms.RadioButton LineRadioButton;
+        private System.Windows.Forms.RadioButton CircleRadioButton;
+        private System.Windows.Forms.RadioButton EllipseRadioButton;
+        private System.Windows.Forms.RadioButton SquareRadioButton;
     }
 }
 

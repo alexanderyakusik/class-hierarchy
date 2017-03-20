@@ -28,42 +28,13 @@ namespace graphics_editor
             }
         }
 
-        private void ToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-            foreach (ToolStripButton btn in ((ToolStrip)sender).Items)
-            {
-                if (btn != e.ClickedItem) btn.Checked = false;
-            }
-        }
-
-        private void ToolStripButtonLine_Click(object sender, System.EventArgs e)
-        {
-            Drawer.CurrentShapeType = typeof(Line);
-        }
-
-        private void ToolStripButtonRectangle_Click(object sender, System.EventArgs e)
-        {
-            Drawer.CurrentShapeType = typeof(Rectangle);
-        }
-
-        private void ToolStripButtonSquare_Click(object sender, System.EventArgs e)
-        {
-            Drawer.CurrentShapeType = typeof(Square);
-        }
-
-        private void ToolStripButtonEllipse_Click(object sender, System.EventArgs e)
-        {
-            Drawer.CurrentShapeType = typeof(Ellipse);
-        }
-
-        private void ToolStripButtonCircle_Click(object sender, System.EventArgs e)
-        {
-            Drawer.CurrentShapeType = typeof(Circle);
-        }
-
         private void PictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            if (Drawer.CurrentShapeType == null) return;
+            if (Drawer.CurrentDrawingShapeType == null)
+            {
+                return;
+            }
+
             isMouseDown = true;
             Drawer.CreateShape(e.X, e.Y);
             Drawer.SetShapeCoordinates(e.X, e.Y);
@@ -71,14 +42,22 @@ namespace graphics_editor
 
         private void PictureBox_MouseMove(object sender, MouseEventArgs e)
         {
-            if (!isMouseDown) return;
+            if (!isMouseDown)
+            {
+                return;
+            }
+
             Drawer.SetShapeCoordinates(e.X, e.Y);
             MainForm_Paint(sender, null);
         }
 
         private void PictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            if (Drawer.CurrentShapeType == null) return;
+            if (Drawer.CurrentDrawingShapeType == null)
+            {
+                return;
+            }
+
             isMouseDown = false;
             Drawer.RecalculateShapeProperties();
         }
@@ -102,8 +81,15 @@ namespace graphics_editor
                 finally
                 {
                     MainForm_Paint(sender, null);
-                    if (shapesFile != null) shapesFile.Close();
-                    if (typesFile != null) typesFile.Close();
+                    if (shapesFile != null)
+                    {
+                        shapesFile.Close();
+                    }
+
+                    if (typesFile != null)
+                    {
+                        typesFile.Close();
+                    }
                 }
             }
         }
@@ -120,10 +106,42 @@ namespace graphics_editor
                 }
                 finally
                 {
-                    if (shapesFile != null) shapesFile.Close();
-                    if (typesFile != null) typesFile.Close();
+                    if (shapesFile != null)
+                    {
+                        shapesFile.Close();
+                    }
+
+                    if (typesFile != null)
+                    {
+                        typesFile.Close();
+                    }
                 }
             }
+        }
+
+        private void LineRadioButton_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Drawer.CurrentDrawingShapeType = typeof(Line);
+        }
+
+        private void RectangleRadioButton_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Drawer.CurrentDrawingShapeType = typeof(Rectangle);
+        }
+
+        private void SquareRadioButton_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Drawer.CurrentDrawingShapeType = typeof(Square);
+        }
+
+        private void EllipseRadioButton_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Drawer.CurrentDrawingShapeType = typeof(Ellipse);
+        }
+
+        private void CircleRadioButton_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Drawer.CurrentDrawingShapeType = typeof(Circle);
         }
     }
 }
