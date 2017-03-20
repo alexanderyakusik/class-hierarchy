@@ -5,9 +5,10 @@ namespace graphics_editor
 {
     public static class Drawer
     {
-        private static int shapeNumber = 1;
         private static Shape currentDrawingShape;
+
         public static Type CurrentDrawingShapeType { get; set; }
+        public static int ShapeNumber { get; private set; } = 1;
 
         public static void DrawAllShapes(Graphics g, Pen pen)
         {
@@ -19,7 +20,7 @@ namespace graphics_editor
             currentDrawingShape = (Shape)Activator.CreateInstance(CurrentDrawingShapeType);
             currentDrawingShape.X = x;
             currentDrawingShape.Y = y;
-            currentDrawingShape.Name = "Shape" + Convert.ToString(shapeNumber++);
+            currentDrawingShape.Name = "Shape" + Convert.ToString(ShapeNumber++);
             ShapesList.Add(currentDrawingShape);
         }
 
@@ -32,6 +33,21 @@ namespace graphics_editor
         public static void RecalculateShapeProperties()
         {
             currentDrawingShape.RecalculateProperties();
+        }
+
+        public static void DeleteShapeIfEmpty()
+        {
+            if (currentDrawingShape.X == currentDrawingShape.EndX && 
+                currentDrawingShape.Y == currentDrawingShape.EndY)
+            {
+                ShapesList.DeleteLastShape();
+                ShapeNumber--;
+            }
+        }
+
+        public static void ChangeShapeNumber()
+        {
+            ShapeNumber = ShapesList.Shapes.Count + 1;
         }
     }
 }

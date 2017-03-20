@@ -60,6 +60,7 @@ namespace graphics_editor
 
             isMouseDown = false;
             Drawer.RecalculateShapeProperties();
+            Drawer.DeleteShapeIfEmpty();
         }
 
         private void LoadToolStripMenuItem_Click(object sender, System.EventArgs e)
@@ -90,6 +91,7 @@ namespace graphics_editor
                     {
                         typesFile.Close();
                     }
+                    Drawer.ChangeShapeNumber();
                 }
             }
         }

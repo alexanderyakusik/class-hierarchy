@@ -17,5 +17,10 @@ namespace graphics_editor
         {
             Shapes.Clear();
         }
+
+        public static void DeleteLastShape()
+        {
+            Shapes.RemoveAt(Shapes.Count - 1);
+        }
     }
 }
