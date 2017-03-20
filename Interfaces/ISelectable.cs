@@ -1,9 +1,9 @@
-﻿namespace graphics_editor
+﻿using System.Drawing;
+
+namespace graphics_editor
 {
     public interface ISelectable
     {
-        bool IsSelected { get; set; }
-
-        void Select();
+        void Select(Graphics g, Pen pen);
     }
 }

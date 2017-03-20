@@ -11,20 +11,37 @@ namespace graphics_editor
         public MainForm()
         {
             InitializeComponent();
+            ShapesListBox.DisplayMember = "Name";
+        }
+
+        private void RefreshShapesListBox()
+        {
+            ShapesListBox.Items.Clear();
+            ShapesList.Shapes.ForEach((Shape shape) => ShapesListBox.Items.Add(shape));
+        }
+
+        private void ClearPictureBox(Bitmap bmp)
+        {
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                g.Clear(Color.White);
+            }
+        }
+
+        private void PaintPictureBox(Graphics g)
+        {
+            var shapesPen = new Pen(new SolidBrush(Color.Black));
+            Drawer.DrawAllShapes(g, shapesPen);
         }
 
         private void MainForm_Paint(object sender, PaintEventArgs e)
         {
             Bitmap bmp = new Bitmap(PictureBox.Width, PictureBox.Height);
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                g.Clear(Color.White);
-            }
+            ClearPictureBox(bmp);
             PictureBox.Image = bmp;
             using (Graphics g = Graphics.FromImage(PictureBox.Image))
             {
-                var pen = new Pen(new SolidBrush(Color.Black));
-                Drawer.DrawAllShapes(g, pen);
+                PaintPictureBox(g);
             }
         }
 
@@ -61,6 +78,7 @@ namespace graphics_editor
             isMouseDown = false;
             Drawer.RecalculateShapeProperties();
             Drawer.DeleteShapeIfEmpty();
+            RefreshShapesListBox();
         }
 
         private void LoadToolStripMenuItem_Click(object sender, System.EventArgs e)
@@ -92,6 +110,7 @@ namespace graphics_editor
                         typesFile.Close();
                     }
                     Drawer.ChangeShapeNumber();
+                    RefreshShapesListBox();
                 }
             }
         }
@@ -144,6 +163,33 @@ namespace graphics_editor
         private void CircleRadioButton_CheckedChanged(object sender, System.EventArgs e)
         {
             Drawer.CurrentDrawingShapeType = typeof(Circle);
+        }
+
+        private void ButtonClearSelection_Click(object sender, System.EventArgs e)
+        {
+            ShapesListBox.ClearSelected();
+        }
+
+        private void ShapesListBox_SelectedValueChanged(object sender, System.EventArgs e)
+        {
+            if (((ListBox)sender).SelectedItem == null)
+            {
+                MainForm_Paint(sender, null);
+                return;
+            }
+
+            Bitmap bmp = new Bitmap(PictureBox.Width, PictureBox.Height);
+            ClearPictureBox(bmp);
+            PictureBox.Image = bmp;
+            using (Graphics g = Graphics.FromImage(PictureBox.Image))
+            {
+                PaintPictureBox(g);
+                var framePen = new Pen(new SolidBrush(Color.DarkGray));
+                framePen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+                framePen.DashPattern = new float[] { 5.0F, 5.0F };
+                framePen.Width = 3.0F;
+                ((Shape)((ListBox)sender).SelectedItem).Select(g, framePen);
+            }
         }
     }
 }

@@ -36,25 +36,26 @@
             this.FolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.ShapesListBox = new System.Windows.Forms.ListBox();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.LineRadioButton = new System.Windows.Forms.RadioButton();
-            this.RectangleRadioButton = new System.Windows.Forms.RadioButton();
-            this.SquareRadioButton = new System.Windows.Forms.RadioButton();
-            this.EllipseRadioButton = new System.Windows.Forms.RadioButton();
             this.CircleRadioButton = new System.Windows.Forms.RadioButton();
+            this.EllipseRadioButton = new System.Windows.Forms.RadioButton();
+            this.SquareRadioButton = new System.Windows.Forms.RadioButton();
+            this.RectangleRadioButton = new System.Windows.Forms.RadioButton();
+            this.LineRadioButton = new System.Windows.Forms.RadioButton();
+            this.ToolsPanel = new System.Windows.Forms.Panel();
+            this.ButtonClearSelection = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.MenuStrip.SuspendLayout();
             this.MainPanel.SuspendLayout();
+            this.ToolsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // PictureBox
             // 
-            this.PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PictureBox.Location = new System.Drawing.Point(124, 24);
+            this.PictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PictureBox.Location = new System.Drawing.Point(126, 67);
             this.PictureBox.MinimumSize = new System.Drawing.Size(1, 1);
             this.PictureBox.Name = "PictureBox";
-            this.PictureBox.Size = new System.Drawing.Size(759, 737);
+            this.PictureBox.Size = new System.Drawing.Size(750, 485);
             this.PictureBox.TabIndex = 0;
             this.PictureBox.TabStop = false;
             this.PictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseDown);
@@ -97,72 +98,26 @@
             // 
             this.ShapesListBox.Dock = System.Windows.Forms.DockStyle.Right;
             this.ShapesListBox.FormattingEnabled = true;
-            this.ShapesListBox.Location = new System.Drawing.Point(881, 24);
+            this.ShapesListBox.Location = new System.Drawing.Point(876, 67);
             this.ShapesListBox.Name = "ShapesListBox";
-            this.ShapesListBox.Size = new System.Drawing.Size(103, 737);
+            this.ShapesListBox.Size = new System.Drawing.Size(108, 485);
             this.ShapesListBox.TabIndex = 3;
+            this.ShapesListBox.SelectedValueChanged += new System.EventHandler(this.ShapesListBox_SelectedValueChanged);
             // 
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.MainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MainPanel.Controls.Add(this.CircleRadioButton);
             this.MainPanel.Controls.Add(this.EllipseRadioButton);
             this.MainPanel.Controls.Add(this.SquareRadioButton);
             this.MainPanel.Controls.Add(this.RectangleRadioButton);
             this.MainPanel.Controls.Add(this.LineRadioButton);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MainPanel.Location = new System.Drawing.Point(0, 24);
+            this.MainPanel.Location = new System.Drawing.Point(0, 67);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(126, 737);
+            this.MainPanel.Size = new System.Drawing.Size(126, 485);
             this.MainPanel.TabIndex = 4;
-            // 
-            // LineRadioButton
-            // 
-            this.LineRadioButton.AutoSize = true;
-            this.LineRadioButton.Location = new System.Drawing.Point(13, 14);
-            this.LineRadioButton.Name = "LineRadioButton";
-            this.LineRadioButton.Size = new System.Drawing.Size(57, 17);
-            this.LineRadioButton.TabIndex = 0;
-            this.LineRadioButton.TabStop = true;
-            this.LineRadioButton.Text = "Линия";
-            this.LineRadioButton.UseVisualStyleBackColor = true;
-            this.LineRadioButton.CheckedChanged += new System.EventHandler(this.LineRadioButton_CheckedChanged);
-            // 
-            // RectangleRadioButton
-            // 
-            this.RectangleRadioButton.AutoSize = true;
-            this.RectangleRadioButton.Location = new System.Drawing.Point(13, 38);
-            this.RectangleRadioButton.Name = "RectangleRadioButton";
-            this.RectangleRadioButton.Size = new System.Drawing.Size(105, 17);
-            this.RectangleRadioButton.TabIndex = 1;
-            this.RectangleRadioButton.TabStop = true;
-            this.RectangleRadioButton.Text = "Прямоугольник";
-            this.RectangleRadioButton.UseVisualStyleBackColor = true;
-            this.RectangleRadioButton.CheckedChanged += new System.EventHandler(this.RectangleRadioButton_CheckedChanged);
-            // 
-            // SquareRadioButton
-            // 
-            this.SquareRadioButton.AutoSize = true;
-            this.SquareRadioButton.Location = new System.Drawing.Point(13, 62);
-            this.SquareRadioButton.Name = "SquareRadioButton";
-            this.SquareRadioButton.Size = new System.Drawing.Size(67, 17);
-            this.SquareRadioButton.TabIndex = 2;
-            this.SquareRadioButton.TabStop = true;
-            this.SquareRadioButton.Text = "Квадрат";
-            this.SquareRadioButton.UseVisualStyleBackColor = true;
-            this.SquareRadioButton.CheckedChanged += new System.EventHandler(this.SquareRadioButton_CheckedChanged);
-            // 
-            // EllipseRadioButton
-            // 
-            this.EllipseRadioButton.AutoSize = true;
-            this.EllipseRadioButton.Location = new System.Drawing.Point(13, 86);
-            this.EllipseRadioButton.Name = "EllipseRadioButton";
-            this.EllipseRadioButton.Size = new System.Drawing.Size(62, 17);
-            this.EllipseRadioButton.TabIndex = 3;
-            this.EllipseRadioButton.TabStop = true;
-            this.EllipseRadioButton.Text = "Эллипс";
-            this.EllipseRadioButton.UseVisualStyleBackColor = true;
-            this.EllipseRadioButton.CheckedChanged += new System.EventHandler(this.EllipseRadioButton_CheckedChanged);
             // 
             // CircleRadioButton
             // 
@@ -176,15 +131,85 @@
             this.CircleRadioButton.UseVisualStyleBackColor = true;
             this.CircleRadioButton.CheckedChanged += new System.EventHandler(this.CircleRadioButton_CheckedChanged);
             // 
+            // EllipseRadioButton
+            // 
+            this.EllipseRadioButton.AutoSize = true;
+            this.EllipseRadioButton.Location = new System.Drawing.Point(13, 86);
+            this.EllipseRadioButton.Name = "EllipseRadioButton";
+            this.EllipseRadioButton.Size = new System.Drawing.Size(62, 17);
+            this.EllipseRadioButton.TabIndex = 3;
+            this.EllipseRadioButton.TabStop = true;
+            this.EllipseRadioButton.Text = "Эллипс";
+            this.EllipseRadioButton.UseVisualStyleBackColor = true;
+            this.EllipseRadioButton.CheckedChanged += new System.EventHandler(this.EllipseRadioButton_CheckedChanged);
+            // 
+            // SquareRadioButton
+            // 
+            this.SquareRadioButton.AutoSize = true;
+            this.SquareRadioButton.Location = new System.Drawing.Point(13, 62);
+            this.SquareRadioButton.Name = "SquareRadioButton";
+            this.SquareRadioButton.Size = new System.Drawing.Size(67, 17);
+            this.SquareRadioButton.TabIndex = 2;
+            this.SquareRadioButton.TabStop = true;
+            this.SquareRadioButton.Text = "Квадрат";
+            this.SquareRadioButton.UseVisualStyleBackColor = true;
+            this.SquareRadioButton.CheckedChanged += new System.EventHandler(this.SquareRadioButton_CheckedChanged);
+            // 
+            // RectangleRadioButton
+            // 
+            this.RectangleRadioButton.AutoSize = true;
+            this.RectangleRadioButton.Location = new System.Drawing.Point(13, 38);
+            this.RectangleRadioButton.Name = "RectangleRadioButton";
+            this.RectangleRadioButton.Size = new System.Drawing.Size(105, 17);
+            this.RectangleRadioButton.TabIndex = 1;
+            this.RectangleRadioButton.TabStop = true;
+            this.RectangleRadioButton.Text = "Прямоугольник";
+            this.RectangleRadioButton.UseVisualStyleBackColor = true;
+            this.RectangleRadioButton.CheckedChanged += new System.EventHandler(this.RectangleRadioButton_CheckedChanged);
+            // 
+            // LineRadioButton
+            // 
+            this.LineRadioButton.AutoSize = true;
+            this.LineRadioButton.Location = new System.Drawing.Point(13, 14);
+            this.LineRadioButton.Name = "LineRadioButton";
+            this.LineRadioButton.Size = new System.Drawing.Size(57, 17);
+            this.LineRadioButton.TabIndex = 0;
+            this.LineRadioButton.TabStop = true;
+            this.LineRadioButton.Text = "Линия";
+            this.LineRadioButton.UseVisualStyleBackColor = true;
+            this.LineRadioButton.CheckedChanged += new System.EventHandler(this.LineRadioButton_CheckedChanged);
+            // 
+            // ToolsPanel
+            // 
+            this.ToolsPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ToolsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ToolsPanel.Controls.Add(this.ButtonClearSelection);
+            this.ToolsPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ToolsPanel.Location = new System.Drawing.Point(0, 24);
+            this.ToolsPanel.Name = "ToolsPanel";
+            this.ToolsPanel.Size = new System.Drawing.Size(984, 43);
+            this.ToolsPanel.TabIndex = 5;
+            // 
+            // ButtonClearSelection
+            // 
+            this.ButtonClearSelection.Location = new System.Drawing.Point(875, 13);
+            this.ButtonClearSelection.Name = "ButtonClearSelection";
+            this.ButtonClearSelection.Size = new System.Drawing.Size(104, 23);
+            this.ButtonClearSelection.TabIndex = 0;
+            this.ButtonClearSelection.Text = "Снять выделение";
+            this.ButtonClearSelection.UseVisualStyleBackColor = true;
+            this.ButtonClearSelection.Click += new System.EventHandler(this.ButtonClearSelection_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 761);
+            this.ClientSize = new System.Drawing.Size(984, 552);
+            this.Controls.Add(this.PictureBox);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.ShapesListBox);
+            this.Controls.Add(this.ToolsPanel);
             this.Controls.Add(this.MenuStrip);
-            this.Controls.Add(this.PictureBox);
             this.MainMenuStrip = this.MenuStrip;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -195,6 +220,7 @@
             this.MenuStrip.PerformLayout();
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
+            this.ToolsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,6 +241,8 @@
         private System.Windows.Forms.RadioButton CircleRadioButton;
         private System.Windows.Forms.RadioButton EllipseRadioButton;
         private System.Windows.Forms.RadioButton SquareRadioButton;
+        private System.Windows.Forms.Panel ToolsPanel;
+        private System.Windows.Forms.Button ButtonClearSelection;
     }
 }
 

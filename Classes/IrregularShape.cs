@@ -11,8 +11,8 @@
             Y = shapeParameters.minY;
             EndY = shapeParameters.maxY;
 
-            Height = shapeParameters.deltaX;
-            Width = shapeParameters.deltaY;
+            Width = shapeParameters.deltaX;
+            Height = shapeParameters.deltaY;
         }
     }
 }

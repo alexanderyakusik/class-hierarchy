@@ -20,7 +20,7 @@ namespace graphics_editor
             currentDrawingShape = (Shape)Activator.CreateInstance(CurrentDrawingShapeType);
             currentDrawingShape.X = x;
             currentDrawingShape.Y = y;
-            currentDrawingShape.Name = "Shape" + Convert.ToString(ShapeNumber++);
+            currentDrawingShape.Name = "Фигура" + Convert.ToString(ShapeNumber++);
             ShapesList.Add(currentDrawingShape);
         }
 

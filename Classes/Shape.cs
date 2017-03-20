@@ -2,7 +2,7 @@
 
 namespace graphics_editor
 {
-    public abstract class Shape
+    public abstract class Shape : ISelectable
     {
         public int X { get; set; }
         public int Y { get; set; }
@@ -14,5 +14,10 @@ namespace graphics_editor
 
         public abstract void Draw(Graphics g, Pen pen);
         public abstract void RecalculateProperties();
+
+        public void Select(Graphics g, Pen pen)
+        {
+            g.DrawRectangle(pen, X, Y, Width, Height);
+        }
     }
 }
