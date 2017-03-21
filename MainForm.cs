@@ -11,7 +11,28 @@ namespace graphics_editor
         public MainForm()
         {
             InitializeComponent();
+            InitializeShapeBorderWidthComboBoxItems();
+            InitializeShapeBorderColorComboBoxItems();
             ShapesListBox.DisplayMember = "Name";
+        }
+
+        private void InitializeShapeBorderWidthComboBoxItems()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                ShapeBorderWidthComboBox.Items.Add(i);
+            }
+            ShapeBorderWidthComboBox.SelectedIndex = 0;
+        }
+
+        private void InitializeShapeBorderColorComboBoxItems()
+        {
+            ShapeBorderColorComboBox.Items.Add(Color.Black);
+            ShapeBorderColorComboBox.Items.Add(Color.Red);
+            ShapeBorderColorComboBox.Items.Add(Color.Blue);
+            ShapeBorderColorComboBox.Items.Add(Color.Green);
+
+            ShapeBorderColorComboBox.SelectedIndex = 0;
         }
 
         private void RefreshShapesListBox()

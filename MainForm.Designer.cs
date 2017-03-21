@@ -43,6 +43,10 @@
             this.LineRadioButton = new System.Windows.Forms.RadioButton();
             this.ToolsPanel = new System.Windows.Forms.Panel();
             this.ButtonClearSelection = new System.Windows.Forms.Button();
+            this.ShapeBorderWidthComboBox = new System.Windows.Forms.ComboBox();
+            this.ShapeBorderColorComboBox = new System.Windows.Forms.ComboBox();
+            this.ShapeBorderWidthLabel = new System.Windows.Forms.Label();
+            this.ShapeBorderColorLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.MenuStrip.SuspendLayout();
             this.MainPanel.SuspendLayout();
@@ -183,6 +187,10 @@
             // 
             this.ToolsPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ToolsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ToolsPanel.Controls.Add(this.ShapeBorderColorLabel);
+            this.ToolsPanel.Controls.Add(this.ShapeBorderWidthLabel);
+            this.ToolsPanel.Controls.Add(this.ShapeBorderColorComboBox);
+            this.ToolsPanel.Controls.Add(this.ShapeBorderWidthComboBox);
             this.ToolsPanel.Controls.Add(this.ButtonClearSelection);
             this.ToolsPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.ToolsPanel.Location = new System.Drawing.Point(0, 24);
@@ -199,6 +207,40 @@
             this.ButtonClearSelection.Text = "Снять выделение";
             this.ButtonClearSelection.UseVisualStyleBackColor = true;
             this.ButtonClearSelection.Click += new System.EventHandler(this.ButtonClearSelection_Click);
+            // 
+            // ShapeBorderWidthComboBox
+            // 
+            this.ShapeBorderWidthComboBox.FormattingEnabled = true;
+            this.ShapeBorderWidthComboBox.Location = new System.Drawing.Point(242, 12);
+            this.ShapeBorderWidthComboBox.Name = "ShapeBorderWidthComboBox";
+            this.ShapeBorderWidthComboBox.Size = new System.Drawing.Size(121, 21);
+            this.ShapeBorderWidthComboBox.TabIndex = 1;
+            // 
+            // ShapeBorderColorComboBox
+            // 
+            this.ShapeBorderColorComboBox.FormattingEnabled = true;
+            this.ShapeBorderColorComboBox.Location = new System.Drawing.Point(473, 12);
+            this.ShapeBorderColorComboBox.Name = "ShapeBorderColorComboBox";
+            this.ShapeBorderColorComboBox.Size = new System.Drawing.Size(121, 21);
+            this.ShapeBorderColorComboBox.TabIndex = 2;
+            // 
+            // ShapeBorderWidthLabel
+            // 
+            this.ShapeBorderWidthLabel.AutoSize = true;
+            this.ShapeBorderWidthLabel.Location = new System.Drawing.Point(141, 15);
+            this.ShapeBorderWidthLabel.Name = "ShapeBorderWidthLabel";
+            this.ShapeBorderWidthLabel.Size = new System.Drawing.Size(95, 13);
+            this.ShapeBorderWidthLabel.TabIndex = 3;
+            this.ShapeBorderWidthLabel.Text = "Ширина границы:";
+            // 
+            // ShapeBorderColorLabel
+            // 
+            this.ShapeBorderColorLabel.AutoSize = true;
+            this.ShapeBorderColorLabel.Location = new System.Drawing.Point(432, 15);
+            this.ShapeBorderColorLabel.Name = "ShapeBorderColorLabel";
+            this.ShapeBorderColorLabel.Size = new System.Drawing.Size(35, 13);
+            this.ShapeBorderColorLabel.TabIndex = 4;
+            this.ShapeBorderColorLabel.Text = "Цвет:";
             // 
             // MainForm
             // 
@@ -221,6 +263,7 @@
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             this.ToolsPanel.ResumeLayout(false);
+            this.ToolsPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,6 +286,10 @@
         private System.Windows.Forms.RadioButton SquareRadioButton;
         private System.Windows.Forms.Panel ToolsPanel;
         private System.Windows.Forms.Button ButtonClearSelection;
+        private System.Windows.Forms.Label ShapeBorderColorLabel;
+        private System.Windows.Forms.Label ShapeBorderWidthLabel;
+        private System.Windows.Forms.ComboBox ShapeBorderColorComboBox;
+        private System.Windows.Forms.ComboBox ShapeBorderWidthComboBox;
     }
 }
 

@@ -11,6 +11,8 @@ namespace graphics_editor
         public int Width { get; set; }
         public int Height { get; set; }
         public string Name { get; set; }
+        public Color BorderColor { get; set; }
+        public int BorderWidth { get; set; }
 
         public abstract void Draw(Graphics g, Pen pen);
         public abstract void RecalculateProperties();

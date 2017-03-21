@@ -66,6 +66,7 @@
     <Compile Include="Classes\Ellipse.cs" />
     <Compile Include="Classes\IrregularShape.cs" />
     <Compile Include="Classes\ProjectManager.cs" />
+    <Compile Include="Interfaces\IEditable.cs" />
     <Compile Include="Interfaces\ISelectable.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
