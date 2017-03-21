@@ -20,18 +20,18 @@ namespace graphics_editor
             ShapesList.Shapes.ForEach((Shape shape) => ShapesListBox.Items.Add(shape));
         }
 
+        private void PaintPictureBox(Graphics g)
+        {
+            var shapePen = new Pen(Color.Black);
+            Drawer.DrawAllShapes(g, shapePen);
+        }
+
         private void ClearPictureBox(Bitmap bmp)
         {
             using (Graphics g = Graphics.FromImage(bmp))
             {
                 g.Clear(Color.White);
             }
-        }
-
-        private void PaintPictureBox(Graphics g)
-        {
-            var shapesPen = new Pen(new SolidBrush(Color.Black));
-            Drawer.DrawAllShapes(g, shapesPen);
         }
 
         private void MainForm_Paint(object sender, PaintEventArgs e)
@@ -178,17 +178,21 @@ namespace graphics_editor
                 return;
             }
 
-            Bitmap bmp = new Bitmap(PictureBox.Width, PictureBox.Height);
-            ClearPictureBox(bmp);
-            PictureBox.Image = bmp;
-            using (Graphics g = Graphics.FromImage(PictureBox.Image))
+            if ((Shape)((ListBox)sender).SelectedItem is ISelectable)
             {
-                PaintPictureBox(g);
-                var framePen = new Pen(new SolidBrush(Color.DarkGray));
-                framePen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-                framePen.DashPattern = new float[] { 5.0F, 5.0F };
-                framePen.Width = 3.0F;
-                ((Shape)((ListBox)sender).SelectedItem).Select(g, framePen);
+                Bitmap bmp = new Bitmap(PictureBox.Width, PictureBox.Height);
+                ClearPictureBox(bmp);
+                PictureBox.Image = bmp;
+                using (Graphics g = Graphics.FromImage(PictureBox.Image))
+                {
+                    PaintPictureBox(g);
+                    ISelectable selectedShape = (Shape)((ListBox)sender).SelectedItem as ISelectable;
+                    selectedShape.Select(g);
+                }
+            }
+            else
+            {
+                MainForm_Paint(sender, null);
             }
         }
     }

@@ -12,7 +12,12 @@ namespace graphics_editor
 
         public static void DrawAllShapes(Graphics g, Pen pen)
         {
-            ShapesList.Shapes.ForEach(item => item.Draw(g, pen));
+            foreach (Shape shape in ShapesList.Shapes)
+            {
+                pen.Color = shape.BorderColor;
+                pen.Width = shape.BorderWidth;
+                shape.Draw(g, pen);
+            }
         }
 
         public static void CreateShape(int x, int y)

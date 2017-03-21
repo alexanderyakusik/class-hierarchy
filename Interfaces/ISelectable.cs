@@ -4,6 +4,6 @@ namespace graphics_editor
 {
     public interface ISelectable
     {
-        void Select(Graphics g, Pen pen);
+        void Select(Graphics g);
     }
 }
