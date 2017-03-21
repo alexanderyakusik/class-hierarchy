@@ -14,8 +14,6 @@ namespace graphics_editor
         {
             foreach (Shape shape in ShapesList.Shapes)
             {
-                pen.Color = shape.BorderColor;
-                pen.Width = shape.BorderWidth;
                 shape.Draw(g, pen);
             }
         }
