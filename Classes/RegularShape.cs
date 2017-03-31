@@ -12,13 +12,11 @@
                 {
                     X = parameters.minX;
                     Y = parameters.minY;
-                    SetWidthHeightAndCoords(parameters.minSide);
                 }
                 else
                 {
                     X = parameters.minX;
                     Y = parameters.maxY - parameters.minSide;
-                    SetWidthHeightAndCoords(parameters.minSide);
                 }
             }
             else
@@ -27,15 +25,14 @@
                 {
                     X = parameters.minX;
                     Y = parameters.minY;
-                    SetWidthHeightAndCoords(parameters.minSide);
                 }
                 else
                 {
                     X = parameters.maxX - parameters.minSide;
                     Y = parameters.minY;
-                    SetWidthHeightAndCoords(parameters.minSide);
                 }
             }
+            SetWidthHeightAndCoords(parameters.minSide);
         }
 
         private void SetWidthHeightAndCoords(int minSide)
