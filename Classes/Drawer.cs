@@ -18,14 +18,21 @@ namespace graphics_editor
 
         public static void DrawAllShapes(Graphics g, Pen pen)
         {
-            ShapesList.Shapes.ForEach((Shape shape) => shape.Draw(g, pen));
+            foreach (Shape shape in ShapesList.Shapes)
+            {
+                pen.Color = Color.FromName(shape.BorderColor);
+                pen.Width = shape.BorderWidth;
+                shape.Draw(g, pen);
+            }
         }
 
-        public static void CreateShape(int x, int y)
+        public static void CreateShape(int x, int y, int borderWidth, string borderColor)
         {
             currentDrawingShape = (Shape)Activator.CreateInstance(CurrentDrawingShapeType);
             currentDrawingShape.X = x;
             currentDrawingShape.Y = y;
+            currentDrawingShape.BorderWidth = borderWidth;
+            currentDrawingShape.BorderColor = borderColor;
             currentDrawingShape.Name = "Фигура" + Convert.ToString(ShapeNumber++);
             ShapesList.Add(currentDrawingShape);
         }

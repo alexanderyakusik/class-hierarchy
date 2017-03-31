@@ -27,10 +27,10 @@ namespace graphics_editor
 
         private void InitializeShapeBorderColorComboBoxItems()
         {
-            ShapeBorderColorComboBox.Items.Add(Color.Black);
-            ShapeBorderColorComboBox.Items.Add(Color.Red);
-            ShapeBorderColorComboBox.Items.Add(Color.Blue);
-            ShapeBorderColorComboBox.Items.Add(Color.Green);
+            ShapeBorderColorComboBox.Items.Add("Black");
+            ShapeBorderColorComboBox.Items.Add("Red");
+            ShapeBorderColorComboBox.Items.Add("Blue");
+            ShapeBorderColorComboBox.Items.Add("Green");
 
             ShapeBorderColorComboBox.SelectedIndex = 0;
         }
@@ -83,8 +83,8 @@ namespace graphics_editor
                 }
             }
             else
-            {
-                Drawer.CreateShape(e.X, e.Y);
+            { 
+                Drawer.CreateShape(e.X, e.Y, (int)ShapeBorderWidthComboBox.SelectedItem, (string)ShapeBorderColorComboBox.SelectedItem);
                 Drawer.SetShapeCoordinates(e.X, e.Y);
             }
         }
@@ -147,6 +147,10 @@ namespace graphics_editor
                 catch (FileNotFoundException ex)
                 {
                     MessageBox.Show("Ошибка! В данной директории нет файлов проекта.", "Ошибка!");
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка! Невозможно загрузить файл проекта.", "Ошибка!");
                 }
                 finally
                 {
@@ -247,6 +251,11 @@ namespace graphics_editor
                 RectangleRadioButton.Enabled = LineRadioButton.Enabled = newState;
         }
 
+        private void SetEditingComboBoxesState(bool newState)
+        {
+            ShapeBorderColorComboBox.Enabled = ShapeBorderWidthComboBox.Enabled = newState;
+        }
+
         private void ShapesListBox_SelectedValueChanged(object sender, System.EventArgs e)
         {
             if (((ListBox)sender).SelectedItem == null)
@@ -260,6 +269,46 @@ namespace graphics_editor
                 SelectShape(((Shape)((ListBox)sender).SelectedItem));
                 PictureBox.Cursor = Cursors.Hand;
                 SetRadioButtonsState(false);
+                if ((Shape)((ListBox)sender).SelectedItem is IEditable)
+                {
+                    SetEditingComboBoxesState(true);
+                }
+                else
+                {
+                    SetEditingComboBoxesState(false);
+                }
+            }
+        }
+
+        private void ShapeBorderWidthComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            if (ShapesListBox.SelectedIndex != -1)
+            {
+                if ((Shape)ShapesListBox.SelectedItem is IEditable)
+                {
+                    ((Shape)ShapesListBox.SelectedItem).BorderWidth = (int)((ComboBox)(sender)).SelectedItem;
+                    MainForm_Paint(sender, null);
+                    if ((Shape)ShapesListBox.SelectedItem is ISelectable)
+                    {
+                        SelectShape((Shape)ShapesListBox.SelectedItem);
+                    }
+                }
+            }
+        }
+
+        private void ShapeBorderColorComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            if (ShapesListBox.SelectedIndex != -1)
+            {
+                if ((Shape)ShapesListBox.SelectedItem is IEditable)
+                {
+                    ((Shape)ShapesListBox.SelectedItem).BorderColor = (string)((ComboBox)(sender)).SelectedItem;
+                    MainForm_Paint(sender, null);
+                    if ((Shape)ShapesListBox.SelectedItem is ISelectable)
+                    {
+                        SelectShape((Shape)ShapesListBox.SelectedItem);
+                    }
+                }
             }
         }
     }

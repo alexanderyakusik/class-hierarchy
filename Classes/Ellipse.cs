@@ -13,6 +13,7 @@ namespace graphics_editor
         public void Select(Graphics g)
         {
             var pen = new Pen(Color.DarkGray);
+            pen.Width = 3;
             pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             pen.DashPattern = new float[] { 5.0F, 5.0F };
             g.DrawRectangle(pen, X, Y, Width, Height);
