@@ -210,6 +210,7 @@
             // 
             // ShapeBorderWidthComboBox
             // 
+            this.ShapeBorderWidthComboBox.Enabled = false;
             this.ShapeBorderWidthComboBox.FormattingEnabled = true;
             this.ShapeBorderWidthComboBox.Location = new System.Drawing.Point(242, 12);
             this.ShapeBorderWidthComboBox.Name = "ShapeBorderWidthComboBox";
@@ -218,6 +219,7 @@
             // 
             // ShapeBorderColorComboBox
             // 
+            this.ShapeBorderColorComboBox.Enabled = false;
             this.ShapeBorderColorComboBox.FormattingEnabled = true;
             this.ShapeBorderColorComboBox.Location = new System.Drawing.Point(473, 12);
             this.ShapeBorderColorComboBox.Name = "ShapeBorderColorComboBox";
@@ -227,6 +229,7 @@
             // ShapeBorderWidthLabel
             // 
             this.ShapeBorderWidthLabel.AutoSize = true;
+            this.ShapeBorderWidthLabel.Enabled = false;
             this.ShapeBorderWidthLabel.Location = new System.Drawing.Point(141, 15);
             this.ShapeBorderWidthLabel.Name = "ShapeBorderWidthLabel";
             this.ShapeBorderWidthLabel.Size = new System.Drawing.Size(95, 13);
@@ -236,6 +239,7 @@
             // ShapeBorderColorLabel
             // 
             this.ShapeBorderColorLabel.AutoSize = true;
+            this.ShapeBorderColorLabel.Enabled = false;
             this.ShapeBorderColorLabel.Location = new System.Drawing.Point(432, 15);
             this.ShapeBorderColorLabel.Name = "ShapeBorderColorLabel";
             this.ShapeBorderColorLabel.Size = new System.Drawing.Size(35, 13);

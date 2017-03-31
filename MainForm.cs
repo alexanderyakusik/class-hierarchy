@@ -74,8 +74,19 @@ namespace graphics_editor
             }
 
             isMouseDown = true;
-            Drawer.CreateShape(e.X, e.Y);
-            Drawer.SetShapeCoordinates(e.X, e.Y);
+
+            if (ShapesListBox.SelectedIndex != -1)
+            {
+                if ((Shape)ShapesListBox.SelectedItem is IEditable)
+                {
+                    Drawer.SetInitialEditingCoordinates((Shape)ShapesListBox.SelectedItem, e.X, e.Y);
+                }
+            }
+            else
+            {
+                Drawer.CreateShape(e.X, e.Y);
+                Drawer.SetShapeCoordinates(e.X, e.Y);
+            }
         }
 
         private void PictureBox_MouseMove(object sender, MouseEventArgs e)
@@ -85,7 +96,18 @@ namespace graphics_editor
                 return;
             }
 
-            Drawer.SetShapeCoordinates(e.X, e.Y);
+            if (ShapesListBox.SelectedIndex != -1)
+            {
+                if ((Shape)ShapesListBox.SelectedItem is IEditable)
+                {
+                    Drawer.ChangeShapeCoordinates((Shape)ShapesListBox.SelectedItem, e.X, e.Y);
+                }
+            }
+            else
+            {
+                Drawer.SetShapeCoordinates(e.X, e.Y);
+            }
+
             MainForm_Paint(sender, null);
         }
 
@@ -97,9 +119,17 @@ namespace graphics_editor
             }
 
             isMouseDown = false;
-            Drawer.RecalculateShapeProperties();
-            Drawer.DeleteShapeIfEmpty();
-            RefreshShapesListBox();
+
+            if (ShapesListBox.SelectedIndex == -1)
+            {
+                Drawer.RecalculateShapeProperties();
+                Drawer.DeleteShapeIfEmpty();
+                RefreshShapesListBox();
+            }
+            else
+            {
+                SelectShape((Shape)ShapesListBox.SelectedItem);
+            }
         }
 
         private void LoadToolStripMenuItem_Click(object sender, System.EventArgs e)
@@ -191,15 +221,9 @@ namespace graphics_editor
             ShapesListBox.ClearSelected();
         }
 
-        private void ShapesListBox_SelectedValueChanged(object sender, System.EventArgs e)
+        private void SelectShape(Shape shape)
         {
-            if (((ListBox)sender).SelectedItem == null)
-            {
-                MainForm_Paint(sender, null);
-                return;
-            }
-
-            if ((Shape)((ListBox)sender).SelectedItem is ISelectable)
+            if (shape is ISelectable)
             {
                 Bitmap bmp = new Bitmap(PictureBox.Width, PictureBox.Height);
                 ClearPictureBox(bmp);
@@ -207,13 +231,35 @@ namespace graphics_editor
                 using (Graphics g = Graphics.FromImage(PictureBox.Image))
                 {
                     PaintPictureBox(g);
-                    ISelectable selectedShape = (Shape)((ListBox)sender).SelectedItem as ISelectable;
+                    ISelectable selectedShape = shape as ISelectable;
                     selectedShape.Select(g);
                 }
             }
             else
             {
+                MainForm_Paint(shape, null);
+            }
+        }
+
+        private void SetRadioButtonsState(bool newState)
+        {
+            CircleRadioButton.Enabled = EllipseRadioButton.Enabled = SquareRadioButton.Enabled = 
+                RectangleRadioButton.Enabled = LineRadioButton.Enabled = newState;
+        }
+
+        private void ShapesListBox_SelectedValueChanged(object sender, System.EventArgs e)
+        {
+            if (((ListBox)sender).SelectedItem == null)
+            {
                 MainForm_Paint(sender, null);
+                PictureBox.Cursor = Cursors.Arrow;
+                SetRadioButtonsState(true);
+            }
+            else
+            {
+                SelectShape(((Shape)((ListBox)sender).SelectedItem));
+                PictureBox.Cursor = Cursors.Hand;
+                SetRadioButtonsState(false);
             }
         }
     }
