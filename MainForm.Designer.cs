@@ -218,6 +218,7 @@
             // 
             // ShapeBorderColorComboBox
             // 
+            this.ShapeBorderColorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ShapeBorderColorComboBox.FormattingEnabled = true;
             this.ShapeBorderColorComboBox.Location = new System.Drawing.Point(473, 12);
             this.ShapeBorderColorComboBox.Name = "ShapeBorderColorComboBox";
@@ -227,6 +228,7 @@
             // 
             // ShapeBorderWidthComboBox
             // 
+            this.ShapeBorderWidthComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ShapeBorderWidthComboBox.FormattingEnabled = true;
             this.ShapeBorderWidthComboBox.Location = new System.Drawing.Point(242, 12);
             this.ShapeBorderWidthComboBox.Name = "ShapeBorderWidthComboBox";

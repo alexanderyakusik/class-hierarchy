@@ -144,7 +144,7 @@ namespace graphics_editor
                     typesFile = new StreamReader(FolderBrowserDialog.SelectedPath + "/Project.types");
                     ProjectManager.LoadShapes(shapesFile, typesFile);
                 }
-                catch (FileNotFoundException ex)
+                catch (FileNotFoundException)
                 {
                     MessageBox.Show("Ошибка! В данной директории нет файлов проекта.", "Ошибка!");
                 }
@@ -223,6 +223,7 @@ namespace graphics_editor
         private void ButtonClearSelection_Click(object sender, System.EventArgs e)
         {
             ShapesListBox.ClearSelected();
+            SetEditingComboBoxesState(true);
         }
 
         private void SelectShape(Shape shape)
