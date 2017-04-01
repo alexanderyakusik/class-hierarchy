@@ -4,13 +4,13 @@ namespace graphics_editor
 {
     class ShapeParameters
     {
-        public int minX { get; }
-        public int minY { get; }
-        public int maxX { get; }
-        public int maxY { get; }
-        public int deltaX { get; }
-        public int deltaY { get; }
-        public int minSide { get; }
+        public int minX { get; private set; }
+        public int minY { get; private set; }
+        public int maxX { get; private set; }
+        public int maxY { get; private set; }
+        public int deltaX { get; private set; }
+        public int deltaY { get; private set; }
+        public int minSide { get; private set; }
 
         public ShapeParameters(Shape shape)
         {
