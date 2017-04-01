@@ -98,6 +98,10 @@
             this.SaveAsToolStripMenuItem.Text = "Сохранить как";
             this.SaveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
             // 
+            // FolderBrowserDialog
+            // 
+            this.FolderBrowserDialog.SelectedPath = "c:\\Users\\user\\Documents\\Graphics Editor\\";
+            // 
             // ShapesListBox
             // 
             this.ShapesListBox.Dock = System.Windows.Forms.DockStyle.Right;
