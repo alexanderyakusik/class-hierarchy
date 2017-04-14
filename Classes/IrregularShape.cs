@@ -4,15 +4,15 @@
     {
         public override void RecalculateProperties()
         {
-            var shapeParameters = new ShapeParameters(this);
+            ShapeParameters parameters = CalculateShapeParams();
 
-            X = shapeParameters.minX;
-            EndX = shapeParameters.maxX;
-            Y = shapeParameters.minY;
-            EndY = shapeParameters.maxY;
+            X = parameters.minX;
+            EndX = parameters.maxX;
+            Y = parameters.minY;
+            EndY = parameters.maxY;
 
-            Width = shapeParameters.deltaX;
-            Height = shapeParameters.deltaY;
+            Width = parameters.deltaX;
+            Height = parameters.deltaY;
         }
     }
 }

@@ -6,7 +6,7 @@ namespace graphics_editor
     {
         public override void Draw(Graphics g, Pen pen)
         {
-            var parameters = new ShapeParameters(this);
+            ShapeParameters parameters = CalculateShapeParams();
 
             if (parameters.deltaX < parameters.deltaY)
             {

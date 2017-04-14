@@ -4,7 +4,7 @@
     {
         public override void RecalculateProperties()
         {
-            var parameters = new ShapeParameters(this);
+            ShapeParameters parameters = CalculateShapeParams();
 
             if (parameters.deltaX < parameters.deltaY)
             {
