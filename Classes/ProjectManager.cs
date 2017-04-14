@@ -24,7 +24,16 @@ namespace graphics_editor
 
         public static void LoadShapes(FileStream shapesFile, StreamReader typesFile)
         {
-            Type[] types = typesFile.ReadLine().Split(' ').Select((String type) => Type.GetType(type)).ToArray();
+            string typesText = typesFile.ReadLine();
+            Type[] types;
+            if (typesText != null)
+            {
+                types = typesText.Split(' ').Select((String type) => Type.GetType(type)).ToArray();
+            }
+            else
+            {
+                types = new Type[] { };
+            }
             var xmlSerializer = new XmlSerializer(typeof(List<Shape>), types);
 
             ShapesList.Shapes = (List<Shape>)xmlSerializer.Deserialize(shapesFile);

@@ -100,7 +100,7 @@
             // 
             // FolderBrowserDialog
             // 
-            this.FolderBrowserDialog.SelectedPath = "c:\\Users\\user\\Documents\\Graphics Editor\\";
+            this.FolderBrowserDialog.SelectedPath = "C:\\Users\\user\\Documents\\Graphics Editor";
             // 
             // ShapesListBox
             // 
